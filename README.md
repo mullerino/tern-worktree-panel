@@ -2,7 +2,7 @@
 
 A [Tern](https://stencil.so/tern) plugin: a panel pinned to the edge of every tab with the git worktrees of the focused repository and the state of the omp agents running in each one.
 
-![Tern with the panel on the left: an agent waiting for an answer at the top, the main checkout highlighted, two agents working and one idle](docs/hero.png)
+![Tern with the panel on the left: two agents waiting for an answer at the top, one in another repository, the main checkout highlighted, two agents working, one idle on a merged worktree, and "2 waiting" in the status line](docs/hero.png)
 
 ## Use
 
