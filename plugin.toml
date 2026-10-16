@@ -1,7 +1,7 @@
 schema = 1
 id = "worktree-panel"
 name = "Worktree Panel"
-version = "0.1.0"
+version = "0.2.0"
 description = "A pinned panel with the git worktrees of the focused repository and the state of the omp agents in each."
 icon = "branch"
 window = "window.luau"

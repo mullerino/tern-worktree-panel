@@ -165,6 +165,36 @@ test("board moves worktrees with a waiting agent to the top, oldest wait first",
 	eq(b.waiting[2].message, "B", "message")
 end)
 
+test("changes counts porcelain entries, renames and copies once", function()
+	eq(Model.changes(""), 0, "clean")
+	eq(Model.changes(" M a.lua\0?? b.lua\0"), 2, "modified and untracked")
+	eq(Model.changes("R  new.lua\0old.lua\0 D gone.lua\0"), 2, "rename source is not its own entry")
+	eq(Model.changes("C  copy.lua\0orig.lua\0"), 1, "copy source is not its own entry")
+end)
+
+test("merged needs a branch with commits whose merge leaves the base unchanged", function()
+	eq(Model.merged("3\t0", nil, nil), true, "fast-forwarded: every commit is on the base")
+	eq(Model.merged("0\t0", nil, nil), false, "fresh branch at the base tip has nothing merged")
+	eq(Model.merged("8\t1", "abc", "abc"), true, "squash-merged: merging changes nothing")
+	eq(Model.merged("19\t8", "def", "abc"), false, "open work changes the base")
+	eq(Model.merged("2\t1", "", "abc"), false, "merge-tree conflict gives no tree")
+	eq(Model.merged("", nil, nil), false, "no base branch")
+end)
+
+test("board marks merged worktrees but never the main checkout", function()
+	local b = Model.board(input({
+		status = {
+			[Model.norm(MAIN, true)] = { merged = true, changed = 0 },
+			[Model.norm(LOGIN, true)] = { merged = true, changed = 2 },
+		},
+	}))
+	eq(b.rows[1].merged, false, "main never merged")
+	eq(b.rows[2].merged, true, "login merged")
+	eq(b.rows[2].changed, 2, "login changes")
+	eq(b.rows[3].merged, false, "hooks unknown")
+	eq(b.rows[3].changed, 0, "hooks no status")
+end)
+
 test("target prefers the last used pane of the worktree, else its first", function()
 	local list = trees()
 	local panes = { { pane = 1, cwd = LOGIN }, { pane = 2, cwd = LOGIN .. "/src" }, { pane = 3, cwd = MAIN } }

@@ -21,6 +21,10 @@ The panel sits on the left of the tab by default. **Worktrees: move the panel to
 | Spinner and timer | An agent in it is working, for that long |
 | `○` | An agent in it is idle |
 | `·` | No agent in it |
+| `merged` | The branch is in the default branch of `origin` (`origin/HEAD`), squash merges included |
+| `±3` | Uncommitted changes in the worktree, untracked files included |
+
+A worktree that shows `merged` and no `±` is safe to remove. The check runs in the background after each list read, a few `git` calls per worktree one after another, and works offline against the last fetch: a branch counts as merged when every commit is on the base, or when merging it into the base would change nothing (squash merges). The trial merge writes its objects to a scratch folder in the plugin's data folder, deleted afterwards, never into the repository. A branch with no commits of its own is never `merged`.
 
 A branch with a ticket key (`feat/APP-142-oauth-login`) shows the key, the type and the rest of the name as a summary; other branch names (`chore/upgrade-eslint`) show as they are.
 
@@ -32,6 +36,10 @@ A worktree whose agent waits for an answer moves to a card at the top, with the 
 | Ctrl+click on a worktree card | Opens Tern's Git view of the worktree in a tab |
 | A waiting card or `Reply` | Focuses that agent |
 | `↻` | Reads the worktree list again |
+| `+` | Asks for a branch name and creates a worktree on that new branch with `tern-wt create --new` |
+| Right-click on a worktree card | Open tab, Git view, Copy path, Remove worktree (not on the main checkout) |
+
+**Remove worktree** asks first, then runs `tern-wt remove`. It removes only worktrees tern-worktrees created; for one with uncommitted work it stops and offers **Force remove**, which discards that work. The branch follows tern-worktrees' teardown policy (by default it is deleted only when merged).
 
 The list is read again when the panel opens, when the focused pane moves to another repository, when a command finishes in a worktree, and on `↻`. Agent states are read every 3 seconds and when an agent finishes a turn.
 
@@ -39,7 +47,8 @@ The list is read again when the panel opens, when the focused pane moves to anot
 
 - The waiting time counts from when the panel first saw the state, because Tern does not report when an agent entered it.
 - An agent in another Tern session shows in the panel, but its card cannot focus it; a toast says so.
-- Creating and removing worktrees is not part of this plugin; [tern-worktrees](https://github.com/riicodespretty/tern-worktrees) does that.
+- Creating and removing worktrees need [tern-worktrees](https://github.com/riicodespretty/tern-worktrees) and its `tern-wt` CLI (`~/.local/bin/tern-wt`, or `tern-wt.cmd` on Windows, which `tern-wt setup` writes). Without it, `+` is hidden and Remove shows a toast.
+- The `merged` check needs git 2.38 or newer (`git merge-tree --write-tree`).
 
 ## Install
 

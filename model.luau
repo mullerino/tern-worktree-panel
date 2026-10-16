@@ -40,6 +40,8 @@ export type Row = {
 	open: boolean,
 	agent: string?,
 	since: number?,
+	merged: boolean,
+	changed: number,
 }
 
 export type Waiting = {
@@ -62,11 +64,40 @@ export type BoardInput = {
 	panes: { Pane },
 	cwd: string?,
 	windows: boolean,
+	status: { [string]: Status }?,
 }
 
 local WAITING = "waiting_input"
 local WORKING = "working"
 local IDLE = "idle"
+
+export type Status = { merged: boolean, changed: number }
+
+function Model.changes(porcelain: string): number
+	local count = 0
+	local skip = false
+	for field in string.gmatch(porcelain, "([^\0]+)") do
+		if skip then
+			skip = false
+		else
+			count += 1
+			local x = string.sub(field, 1, 1)
+			skip = x == "R" or x == "C"
+		end
+	end
+	return count
+end
+
+function Model.merged(counts: string, mergedTree: string?, baseTree: string?): boolean
+	local behind, ahead = string.match(counts, "^%s*(%d+)%s+(%d+)")
+	if not behind or not ahead then
+		return false
+	end
+	if ahead == "0" then
+		return behind ~= "0"
+	end
+	return mergedTree ~= nil and baseTree ~= nil and mergedTree ~= "" and mergedTree == baseTree
+end
 
 function Model.norm(path: string?, windows: boolean): string
 	if path == nil or path == "" then
@@ -321,6 +352,7 @@ function Model.board(input: BoardInput): Board
 		else
 			local agent = strongest[tree]
 			local seen = agent and input.seen[agent.pane]
+			local status = input.status and input.status[Model.norm(tree.path, windows)]
 			table.insert(board.rows, {
 				index = position,
 				tree = tree,
@@ -330,6 +362,8 @@ function Model.board(input: BoardInput): Board
 				open = open[tree] == true,
 				agent = agent and agent.state,
 				since = seen and seen.since,
+				merged = not tree.main and status ~= nil and status.merged,
+				changed = if status then status.changed else 0,
 			})
 		end
 	end

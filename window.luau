@@ -8,7 +8,8 @@ local PLUGIN = tern.plugin.id
 local TITLE = "Worktrees"
 local ABOUT = "Lists the git worktrees of the focused repository and the omp agents running in each. "
 	.. "Clicking a row focuses the last used pane of that worktree or opens a tab in it; ctrl+click opens Tern's Git view. "
-	.. "A waiting agent's card focuses that agent."
+	.. "Right-click a row for more: open a tab, open the Git view, copy the path, remove the worktree. "
+	.. "A waiting agent's card focuses that agent; + creates a worktree on a new branch with tern-worktrees."
 local PANEL_SHARE = 0.26
 local POLL_MS = 3000
 local SETTLE_MS = 150
@@ -38,6 +39,12 @@ type State = {
 	polling: boolean,
 	queued: boolean,
 	filling: boolean,
+	status: { [string]: Model.Status },
+	checking: boolean,
+	recheck: boolean,
+	removing: { [string]: boolean },
+	creatable: boolean,
+	cli: { string }?,
 }
 
 local state: State = {
@@ -61,6 +68,12 @@ local state: State = {
 	polling = false,
 	queued = false,
 	filling = false,
+	status = {},
+	checking = false,
+	recheck = false,
+	removing = {},
+	creatable = false,
+	cli = nil,
 }
 
 local function key(path: string): string
@@ -171,16 +184,48 @@ local function clamp(name: string, spans: { any }, count: number): any
 	return role(name, ui.node("text", { key = name, spans = spans, lines = count }))
 end
 
-local function header(): any
+local function findCli(): { string }?
+	local home = tern.getenv(if WINDOWS then "USERPROFILE" else "HOME")
+	if not home or home == "" then
+		return nil
+	end
+	local ok, argv = pcall(function(): { string }?
+		if WINDOWS then
+			local shim = home .. "\\.local\\bin\\tern-wt.cmd"
+			if not tern.fs.exists(shim) then
+				return nil
+			end
+			local script = string.match(tern.fs.read(shim, 4096), '"([^"]+%.ts)"')
+			return if script then { "bun", script } else nil
+		end
+		local bin = home .. "/.local/bin/tern-wt"
+		return if tern.fs.exists(bin) then { bin } else nil
+	end)
+	return if ok then argv else nil
+end
+
+local function header(creatable: boolean): any
 	local count = if state.loaded then tostring(#state.trees) else ""
-	return role(
-		"header",
-		line("header", { justify = "between", align = "center" }, {
-			grow(cut("title", { span("Worktrees", "muted"), span(" · ", "dim"), span(repoName(), "strong") })),
-			fixed(role("count", keyed("count", ui.text({ span(count, "num") })))),
-			fixed(role("refresh", ui.el("button", { key = "refresh", text = "↻", actions = { click = "refresh" } }))),
-		})
+	local parts = {
+		grow(cut("title", { span("Worktrees", "muted"), span(" · ", "dim"), span(repoName(), "strong") })),
+		fixed(role("count", keyed("count", ui.text({ span(count, "num") })))),
+	}
+	if creatable then
+		table.insert(
+			parts,
+			fixed(
+				role(
+					"new",
+					ui.el("button", { key = "new", text = "+", title = "New worktree", actions = { click = "new" } })
+				)
+			)
+		)
+	end
+	table.insert(
+		parts,
+		fixed(role("refresh", ui.el("button", { key = "refresh", text = "↻", actions = { click = "refresh" } })))
 	)
+	return role("header", line("header", { justify = "between", align = "center" }, parts))
 end
 
 local function elapsed(name: string, since: number?, now: number): any?
@@ -235,6 +280,9 @@ local function row(item: Model.Row, now: number): any
 		table.insert(title, span(" " .. item.branch.kind, "muted"))
 	end
 	local head = { marker(item), grow(cut("name", title)) }
+	if item.merged then
+		table.insert(head, fixed(role("merged", keyed("merged", ui.text({ span("merged", nil) })))))
+	end
 	if not item.current and item.open then
 		table.insert(head, fixed(role("go", keyed("action", ui.text({ span("Go", nil) })))))
 	end
@@ -243,18 +291,29 @@ local function row(item: Model.Row, now: number): any
 		table.insert(body, cut("summary", { span(item.branch.summary, nil) }))
 	end
 	local foot = { grow(cut("path", { span(item.path, nil) }, "start")) }
+	if item.changed > 0 then
+		table.insert(foot, fixed(role("changed", keyed("changed", ui.text({ span("±" .. item.changed, "num") })))))
+	end
 	local timer = if item.agent == "working" then elapsed("since", item.since, now) else nil
 	if timer then
 		table.insert(foot, timer)
 	end
 	table.insert(body, line("foot", { align = "center" }, foot))
-	local node =
-		ui.node("col", { key = "row" .. item.index, gap = "none", actions = { click = "go=" .. item.index } }, body)
+	local i = tostring(item.index)
+	local menu = { "open-tab", "git-view", "copy-path" }
+	if not item.tree.main then
+		table.insert(menu, "remove-worktree")
+	end
+	local node = ui.node("col", {
+		key = "row" .. item.index,
+		gap = "none",
+		actions = { click = "go=" .. i, menu = menu },
+	}, body)
 	return role(if item.current then "current" else "row", node)
 end
 
 local function signature(board: Model.Board): string
-	local parts = { tostring(#state.trees), state.failure or "", repoName() }
+	local parts = { tostring(#state.trees), state.failure or "", repoName(), tostring(state.creatable) }
 	for _, w in board.waiting do
 		table.insert(parts, string.format("w%d:%d:%s:%s", w.index, w.pane, tostring(w.since), w.message))
 	end
@@ -262,12 +321,14 @@ local function signature(board: Model.Board): string
 		table.insert(
 			parts,
 			string.format(
-				"r%d:%s:%s:%s:%s",
+				"r%d:%s:%s:%s:%s:%s:%d",
 				r.index,
 				tostring(r.current),
 				tostring(r.open),
 				r.agent or "",
-				tostring(r.since)
+				tostring(r.since),
+				tostring(r.merged),
+				r.changed
 			)
 		)
 	end
@@ -275,7 +336,7 @@ local function signature(board: Model.Board): string
 end
 
 local function view(board: Model.Board?, now: number): any
-	local children = { header() }
+	local children = { header(state.creatable) }
 	if state.failure then
 		table.insert(children, role("note", keyed("failure", ui.text({ span(state.failure, "muted") }))))
 	elseif not state.loaded or not board then
@@ -311,6 +372,8 @@ end
 local redraw: () -> ()
 
 local function compose(cx: any): (Model.Board?, string)
+	state.cli = state.cli or findCli()
+	state.creatable = state.cli ~= nil
 	local board = if state.loaded
 		then Model.board({
 			trees = state.trees,
@@ -319,9 +382,10 @@ local function compose(cx: any): (Model.Board?, string)
 			panes = panes(cx),
 			cwd = state.cwd,
 			windows = WINDOWS,
+			status = state.status,
 		})
 		else nil
-	return board, if board then signature(board) else (state.failure or "loading")
+	return board, if board then signature(board) else (state.failure or "loading") .. tostring(state.creatable)
 end
 
 local function paint(cx: any, queue: { number }, sig: string, board: Model.Board?)
@@ -388,6 +452,117 @@ redraw = function()
 	end)
 end
 
+local function git(dir: string, args: { string }, env: { [string]: string }?, cb: (res: any) -> ())
+	local argv = { "git", "--no-optional-locks", "-C", Model.native(dir, WINDOWS) }
+	for _, arg in args do
+		table.insert(argv, arg)
+	end
+	local ok = pcall(tern.process.run, argv, { timeout_ms = 15000, env = env }, function(res, _cx)
+		cb(res)
+	end)
+	if not ok then
+		cb({ status = -1, stdout = "", stderr = "" })
+	end
+end
+
+local function trimmed(text: string?): string?
+	local out = text and string.match(text, "^%s*(.-)%s*$")
+	return if out == "" then nil else out
+end
+
+local function check()
+	if state.checking then
+		state.recheck = true
+		return
+	end
+	local main = state.trees[1]
+	if not main then
+		return
+	end
+	local todo: { Model.Tree } = {}
+	for _, tree in state.trees do
+		if not tree.main and not tree.detached then
+			table.insert(todo, tree)
+		end
+	end
+	state.checking = true
+	local next: { [string]: Model.Status } = {}
+	local scratch = tern.plugin.data .. "/scratch/" .. string.format("%d", tern.now())
+	local function finish()
+		pcall(tern.fs.remove, scratch)
+		state.status, state.checking = next, false
+		redraw()
+		if state.recheck then
+			state.recheck = false
+			check()
+		end
+	end
+	git(main.path, { "symbolic-ref", "-q", "--short", "refs/remotes/origin/HEAD" }, nil, function(head)
+		local base = if head.status == 0 then trimmed(head.stdout) else nil
+		local args = { "rev-parse", "--path-format=absolute", "--git-common-dir" }
+		if base then
+			table.insert(args, base .. "^{tree}")
+		end
+		git(main.path, args, nil, function(info)
+			local lines = string.split(info.stdout, "\n")
+			local common = if info.status == 0 then trimmed(lines[1]) else nil
+			local baseTree = if base and info.status == 0 then trimmed(lines[2]) else nil
+			local env = nil
+			if common and pcall(tern.fs.mkdir, scratch) then
+				env = {
+					GIT_OBJECT_DIRECTORY = Model.native(scratch, WINDOWS),
+					GIT_ALTERNATE_OBJECT_DIRECTORIES = Model.native(common .. "/objects", WINDOWS),
+				}
+			end
+			local function step(i: number)
+				local tree = todo[i]
+				if not tree then
+					finish()
+					return
+				end
+				git(tree.path, { "status", "--porcelain=v1", "-z", "--untracked-files=normal" }, nil, function(st)
+					local status: Model.Status = { changed = 0, merged = false }
+					if st.status == 0 then
+						status.changed = Model.changes(st.stdout)
+					end
+					next[key(tree.path)] = status
+					local branch = tree.branch
+					if not base or not baseTree or not env or not branch then
+						step(i + 1)
+						return
+					end
+					git(
+						tree.path,
+						{ "rev-list", "--left-right", "--count", base .. "..." .. branch },
+						nil,
+						function(counts)
+							local ahead = if counts.status == 0
+								then string.match(counts.stdout, "^%s*%d+%s+(%d+)")
+								else nil
+							if not ahead or ahead == "0" then
+								status.merged = counts.status == 0 and Model.merged(counts.stdout, nil, nil)
+								step(i + 1)
+								return
+							end
+							git(
+								tree.path,
+								{ "merge-tree", "--write-tree", "--no-messages", base, branch },
+								env,
+								function(merged)
+									local out = if merged.status == 0 then trimmed(merged.stdout) else ""
+									status.merged = Model.merged(counts.stdout, out, baseTree)
+									step(i + 1)
+								end
+							)
+						end
+					)
+				end)
+			end
+			step(1)
+		end)
+	end)
+end
+
 local function refresh()
 	local dir = state.cwd
 	if not dir then
@@ -416,6 +591,7 @@ local function refresh()
 		if cx then
 			draw(cx)
 		end
+		check()
 		if state.again then
 			state.again = false
 			refresh()
@@ -728,6 +904,147 @@ local function held(mods: { string }?, name: string): boolean
 	return false
 end
 
+local function openTab(cx: any, tree: Model.Tree)
+	if not cx.layout:new_tab({ cwd = Model.native(tree.path, WINDOWS) }) then
+		cx:toast("error", "The tab did not open", Model.displayPath(tree.path, WINDOWS))
+	end
+end
+
+local function cliError(stdout: string, stderr: string): (string?, string)
+	local ok, decoded = pcall(tern.json.decode, stdout)
+	local err = ok and type(decoded) == "table" and decoded.error
+	if type(err) == "table" then
+		return err.code, tostring(err.message or err.code)
+	end
+	local text = if stderr ~= "" then stderr else stdout
+	return nil, (string.match(text, "^%s*([^\n]+)") or "tern-wt failed")
+end
+
+local function runRemove(cx: any, tree: Model.Tree, force: boolean)
+	local id = key(tree.path)
+	if state.removing[id] then
+		return
+	end
+	state.removing[id] = true
+	local name = Model.branch(tree).title
+	cx:toast("info", "Removing worktree " .. name .. "…")
+	state.cli = state.cli or findCli()
+	if not state.cli then
+		state.removing[id] = nil
+		cx:toast("error", "tern-wt was not found", "Install tern-worktrees to remove worktrees from the panel.")
+		return
+	end
+	local argv = table.clone(state.cli)
+	table.insert(argv, "remove")
+	table.insert(argv, Model.native(tree.path, WINDOWS))
+	if force then
+		table.insert(argv, "--force")
+	end
+	local ok = pcall(tern.process.run, argv, { timeout_ms = 120000 }, function(res: any, next: any)
+		state.removing[id] = nil
+		refresh()
+		if not next then
+			return
+		end
+		if res.status == 0 then
+			next:toast("success", "Removed worktree " .. name)
+			return
+		end
+		local code, message = cliError(res.stdout, res.stderr)
+		if code == "dirty_worktree" or code == "git_failed" then
+			next:pick({
+				placeholder = if code == "dirty_worktree"
+					then name .. " has uncommitted work, not removed"
+					else "Not removed: " .. message,
+				icon = "trash",
+				action = "choose",
+				items = {
+					{ id = "keep", label = "Keep the worktree", icon = "folder" },
+					{ id = "force", label = "Force remove", detail = "discards uncommitted work", icon = "trash" },
+				},
+			}):next(function(item, _err, later)
+				if item and item.id == "force" and later then
+					runRemove(later, tree, true)
+				end
+			end)
+		elseif code == "not_managed" then
+			next:toast("info", "tern-worktrees does not manage this worktree", "It removes only worktrees it created.")
+		else
+			next:toast("error", "The worktree was not removed", message)
+		end
+	end)
+	if not ok then
+		state.removing[id] = nil
+		cx:toast("error", "tern-wt did not run", "Install tern-worktrees to remove worktrees from the panel.")
+	end
+end
+
+local function confirmRemove(cx: any, tree: Model.Tree)
+	local status = state.status[key(tree.path)]
+	local detail = if status and status.changed > 0
+		then status.changed .. " uncommitted change" .. (if status.changed == 1 then "" else "s") .. ", removal stops"
+		elseif status and status.merged then "merged and clean"
+		else nil
+	cx:pick({
+		placeholder = "Remove " .. Model.displayPath(tree.path, WINDOWS) .. "?",
+		icon = "trash",
+		action = "choose",
+		items = {
+			{ id = "remove", label = "Remove worktree", detail = detail, icon = "trash" },
+			{ id = "keep", label = "Keep it", icon = "folder" },
+		},
+	}):next(function(item, _err, next)
+		if item and item.id == "remove" and next then
+			runRemove(next, tree, false)
+		end
+	end)
+end
+
+local function createWorktree(cx: any, dir: string, branch: string)
+	local cli = state.cli
+	if not cli then
+		cx:toast("error", "tern-wt was not found", "Install tern-worktrees to create worktrees from the panel.")
+		return
+	end
+	local argv = table.clone(cli)
+	for _, arg in { "create", "--repo", Model.native(dir, WINDOWS), "--new", "--branch=" .. branch } do
+		table.insert(argv, arg)
+	end
+	cx:toast("info", "Creating worktree " .. branch .. "…")
+	local ok = pcall(tern.process.run, argv, { timeout_ms = 180000 }, function(res: any, next: any)
+		refresh()
+		if not next then
+			return
+		end
+		if res.status == 0 then
+			local done, decoded = pcall(tern.json.decode, res.stdout)
+			local path = if done and type(decoded) == "table" then decoded.path else nil
+			next:toast("success", "Created worktree " .. branch, if type(path) == "string" then path else nil)
+			return
+		end
+		local _, message = cliError(res.stdout, res.stderr)
+		next:toast("error", "The worktree was not created", message)
+	end)
+	if not ok then
+		cx:toast("error", "tern-wt did not run", table.concat(cli, " "))
+	end
+end
+
+local function newWorktree(cx: any)
+	local dir = state.cwd
+	if not dir then
+		cx:toast("info", "Focus a terminal inside a git repository first.")
+		return
+	end
+	cx:prompt({ placeholder = "New branch for a worktree in " .. repoName(), icon = "branch", action = "create" })
+		:next(function(text, _err, next)
+			local branch = if type(text) == "string" then string.match(text, "^%s*(.-)%s*$") else nil
+			if branch and branch ~= "" and next then
+				createWorktree(next, dir, branch)
+			end
+		end)
+end
+
 local function adopt(cx: any)
 	if state.adopted then
 		return
@@ -777,10 +1094,26 @@ tern.on("canvas_action", function(ev: any, cx: any)
 	end
 	if ev.act == "refresh" then
 		refresh()
+	elseif ev.act == "new" then
+		newWorktree(cx)
 	elseif ev.act == "agent" then
 		local pane = tonumber(ev.value)
 		if pane then
 			focusAgent(cx, pane)
+		end
+	elseif ev.act == "open-tab" or ev.act == "git-view" or ev.act == "copy-path" or ev.act == "remove-worktree" then
+		local tree = state.trees[tonumber(ev.value) or tonumber(string.match(ev.node or "", "%.row(%d+)$")) or 0]
+		if tree then
+			if ev.act == "open-tab" then
+				openTab(cx, tree)
+			elseif ev.act == "git-view" then
+				openGit(cx, tree)
+			elseif ev.act == "copy-path" then
+				cx:copy(Model.native(tree.path, WINDOWS))
+				cx:toast("info", "Path copied", Model.displayPath(tree.path, WINDOWS))
+			elseif not tree.main then
+				confirmRemove(cx, tree)
+			end
 		end
 	elseif ev.act == "go" then
 		local tree = state.trees[tonumber(ev.value) or 0]
