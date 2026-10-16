@@ -122,6 +122,32 @@ test("track keeps the time an agent entered its state and resets it on change", 
 	eq(seen[1], nil, "dropped")
 end)
 
+test("newlyWaiting lists only agents that just started waiting", function()
+	local before = { [1] = { state = "working", since = 1 }, [2] = { state = "waiting_input", since = 1 } }
+	local after = {
+		[1] = { state = "waiting_input", since = 5 },
+		[2] = { state = "waiting_input", since = 1 },
+		[3] = { state = "waiting_input", since = 5 },
+		[4] = { state = "idle", since = 5 },
+	}
+	local out = Model.newlyWaiting(before, after)
+	eq(#out, 2, "two new")
+	eq(out[1], 1, "working to waiting")
+	eq(out[2], 3, "new agent already waiting")
+end)
+
+test("oldestWaiting picks the longest wait and counts every waiting agent", function()
+	local pane, count = Model.oldestWaiting({
+		[7] = { state = "waiting_input", since = 300 },
+		[3] = { state = "waiting_input", since = 100 },
+		[5] = { state = "working", since = 50 },
+	})
+	eq(pane, 3, "oldest")
+	eq(count, 2, "count")
+	local none, zero = Model.oldestWaiting({ [1] = { state = "idle", since = 1 } })
+	eq(none, nil, "no one waiting")
+	eq(zero, 0, "zero")
+end)
 test("excerpt strips markdown, collapses whitespace and cuts on characters", function()
 	eq(Model.excerpt("**Can** I run\n\n`npm run migrate`?", 80), "Can I run npm run migrate?", "cleaned")
 	eq(Model.excerpt("before ```js\ncode\n``` after", 80), "before after", "code block removed")

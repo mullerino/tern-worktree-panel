@@ -768,10 +768,39 @@ local function remember(cx: any, paneId: number?): boolean
 	return moved
 end
 
+local function alert(cx: any, panes: { number })
+	local shown = shownTab(cx)
+	for _, pane in panes do
+		if cx.session:tab_of(pane) ~= shown then
+			local agent: Model.Agent? = nil
+			for _, a in state.agents do
+				if a.pane == pane then
+					agent = a
+				end
+			end
+			if agent then
+				local message = Model.excerpt(agent.last_message, EXCERPT)
+				cx:toast(
+					"info",
+					"An agent is waiting for you in " .. Model.folder(agent.cwd, WINDOWS),
+					if message ~= "" then message else nil
+				)
+			end
+		end
+	end
+end
+
 local function sync(cx: any): boolean
 	local list = agents(cx)
-	local seen, changed = Model.track(state.seen, list, tern.now())
+	local before = state.seen
+	local seen, changed = Model.track(before, list, tern.now())
 	state.agents, state.seen = list, seen
+	if changed then
+		if state.polled then
+			alert(cx, Model.newlyWaiting(before, seen))
+		end
+		tern.chrome.refresh()
+	end
 	return changed
 end
 
@@ -1071,6 +1100,38 @@ tern.command({
 	keys = { "alt+shift+e" },
 	run = toggle,
 })
+
+tern.command({
+	id = "waiting",
+	title = "Worktrees: go to the agent waiting longest",
+	icon = "branch",
+	run = function(cx: any)
+		local pane = Model.oldestWaiting(state.seen)
+		if pane then
+			focusAgent(cx, pane)
+		else
+			cx:toast("info", "No agent is waiting for you")
+		end
+	end,
+})
+
+tern.chrome.status(function(_pane: any): { any }?
+	if not state.enabled then
+		return nil
+	end
+	local _, count = Model.oldestWaiting(state.seen)
+	if count == 0 then
+		return nil
+	end
+	return {
+		{
+			text = count .. " waiting",
+			icon = "branch",
+			tone = "warn",
+			command = "plugin." .. PLUGIN .. ".waiting",
+		},
+	}
+end)
 
 tern.command({
 	id = "side",

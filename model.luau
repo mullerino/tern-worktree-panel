@@ -270,6 +270,33 @@ function Model.track(seen: Seen, agents: { Agent }, now: number): (Seen, boolean
 	return next, changed
 end
 
+function Model.newlyWaiting(before: Seen, after: Seen): { number }
+	local out: { number } = {}
+	for pane, entry in after do
+		local previous = before[pane]
+		if entry.state == WAITING and (not previous or previous.state ~= WAITING) then
+			table.insert(out, pane)
+		end
+	end
+	table.sort(out)
+	return out
+end
+
+function Model.oldestWaiting(seen: Seen): (number?, number)
+	local pane: number? = nil
+	local since = math.huge
+	local count = 0
+	for id, entry in seen do
+		if entry.state == WAITING then
+			count += 1
+			if entry.since < since or (entry.since == since and pane ~= nil and id < pane) then
+				pane, since = id, entry.since
+			end
+		end
+	end
+	return pane, count
+end
+
 function Model.excerpt(message: string?, limit: number): string
 	if not message then
 		return ""
