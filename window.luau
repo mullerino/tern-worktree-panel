@@ -299,7 +299,7 @@ local function row(item: Model.Row, now: number): any
 	end
 	table.insert(body, line("foot", { align = "center" }, foot))
 	local i = tostring(item.index)
-	local menu = { "open-tab", "git-view", "copy-path" }
+	local menu = { "new-agent", "open-tab", "git-view", "copy-path" }
 	if not item.tree.main then
 		table.insert(menu, "remove-worktree")
 	end
@@ -1079,6 +1079,23 @@ local function newWorktree(cx: any)
 		end)
 end
 
+local function newAgent(cx: any, tree: Model.Tree)
+	local name = Model.branch(tree).title
+	cx:prompt({ placeholder = "Task for a new agent in " .. name, icon = "branch", action = "start" })
+		:next(function(text, _err, next)
+			local prompt = if type(text) == "string" then string.match(text, "^%s*(.-)%s*$") else nil
+			if not prompt or prompt == "" or not next then
+				return
+			end
+			local ok, err = pcall(function()
+				next.agents:start({ prompt = prompt, cwd = Model.native(tree.path, WINDOWS), how = "tab" })
+			end)
+			if not ok then
+				next:toast("error", "The agent did not start", tostring(err))
+			end
+		end)
+end
+
 local function adopt(cx: any)
 	if state.adopted then
 		return
@@ -1167,10 +1184,18 @@ tern.on("canvas_action", function(ev: any, cx: any)
 		if pane then
 			focusAgent(cx, pane)
 		end
-	elseif ev.act == "open-tab" or ev.act == "git-view" or ev.act == "copy-path" or ev.act == "remove-worktree" then
+	elseif
+		ev.act == "new-agent"
+		or ev.act == "open-tab"
+		or ev.act == "git-view"
+		or ev.act == "copy-path"
+		or ev.act == "remove-worktree"
+	then
 		local tree = state.trees[tonumber(ev.value) or tonumber(string.match(ev.node or "", "%.row(%d+)$")) or 0]
 		if tree then
-			if ev.act == "open-tab" then
+			if ev.act == "new-agent" then
+				newAgent(cx, tree)
+			elseif ev.act == "open-tab" then
 				openTab(cx, tree)
 			elseif ev.act == "git-view" then
 				openGit(cx, tree)
