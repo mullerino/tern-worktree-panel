@@ -1,0 +1,3303 @@
+{
+  "version": "2.21",
+  "children": [
+    {
+      "type": "frame",
+      "id": "E5nku",
+      "x": 0,
+      "y": 0,
+      "name": "Worktree panel · estados v3",
+      "fill": "$bg",
+      "gap": 36,
+      "padding": 40,
+      "children": [
+        {
+          "type": "frame",
+          "id": "OP9of",
+          "name": "1 · Lista normal",
+          "width": 320,
+          "layout": "vertical",
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "r39LOv",
+              "name": "Título do estado",
+              "fill": "$fg",
+              "content": "1 · Lista normal",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "TRgMb",
+              "name": "Nota",
+              "fill": "$muted",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "› worktree da aba atual · ○ agente parado · “Ir” marca a worktree com aba aberta; sem ela, o clique no card abre uma aba",
+              "lineHeight": 1.35,
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "NUtjC",
+              "name": "Painel",
+              "clip": true,
+              "width": "fill_container",
+              "fill": "$panel",
+              "cornerRadius": 6,
+              "stroke": "$border",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "nsuva",
+                  "name": "Cabeçalho",
+                  "width": "fill_container",
+                  "stroke": "$border",
+                  "strokeWidth": {
+                    "bottom": 1
+                  },
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ZvOyX",
+                      "name": "Título",
+                      "fill": "$fg",
+                      "content": "Worktrees · backend_v2",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "tEM0J",
+                      "name": "Ações",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "rIehc",
+                          "name": "Total",
+                          "fill": "$muted",
+                          "content": "7",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "hTnPN",
+                          "name": "Botão ↻",
+                          "cornerRadius": 4,
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "padding": [
+                            2,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "jghTY",
+                              "name": "Rótulo",
+                              "fill": "$fg",
+                              "content": "↻",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "NGW4n",
+                  "name": "Lista",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "padding": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "O4juJI",
+                      "name": "Worktree master",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "IcvZ9",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "z2l5Fe",
+                              "name": "Glifo",
+                              "fill": "$fg",
+                              "content": "›",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "SSxuE",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "ruhCi",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "YvFQe",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "master",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "t4vgkR",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "A0oUjz",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/Documents/backend_v2",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "K8jzl1",
+                      "name": "Worktree DDC-630",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "jJStg",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "G1iEH",
+                              "name": "Glifo",
+                              "fill": "$muted",
+                              "content": "○",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Vpsrc",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "APN9V",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "UFAqK",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-630",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "SrRKL",
+                                  "name": "Tipo",
+                                  "fill": "$muted",
+                                  "content": "feat",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "b1Tq5",
+                              "name": "Descrição",
+                              "fill": "$muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "sincronizar notas fiscais",
+                              "lineHeight": 1.35,
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "ObGh2",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "bhVVK",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/wt/backend_v2/DDC-630",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "BjTyJ",
+                          "name": "Botão Ir",
+                          "cornerRadius": 4,
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "padding": [
+                            2,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "RyIPq",
+                              "name": "Rótulo",
+                              "fill": "$fg",
+                              "content": "Ir",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Rh5rt",
+                      "name": "Worktree DDC-658",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "PcA4j",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "RpY94",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "YDAK7",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "xSTJN",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-658",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "ZbwZo",
+                                  "name": "Tipo",
+                                  "fill": "$muted",
+                                  "content": "fix",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "C2b1F",
+                              "name": "Descrição",
+                              "fill": "$muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "migrar arquivos s3",
+                              "lineHeight": 1.35,
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "ZRHrf",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "RbA0S",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/wt/backend_v2/DDC-658",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "PEu0p",
+                          "name": "Botão Ir",
+                          "cornerRadius": 4,
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "padding": [
+                            2,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "S7Qno",
+                              "name": "Rótulo",
+                              "fill": "$fg",
+                              "content": "Ir",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "fVNjb",
+                      "name": "Worktree DDC-680",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "YT0MR",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Gj62D",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "j4DNgQ",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "JlEvD",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-680",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "cIGr6",
+                                  "name": "Tipo",
+                                  "fill": "$muted",
+                                  "content": "chore",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "L6lcy8",
+                              "name": "Descrição",
+                              "fill": "$muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "remover sdk sankhya",
+                              "lineHeight": 1.35,
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "S6Zsx",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "QXaVS",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/wt/backend_v2/DDC-680",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "x0RsG",
+                      "name": "Worktree DDC-649",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "wZg1A",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Af88a",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "N758M",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "vj4fq",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-649",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "bnKxA",
+                                  "name": "Tipo",
+                                  "fill": "$muted",
+                                  "content": "fix",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "vDyaB",
+                              "name": "Descrição",
+                              "fill": "$muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "bloquear mnemonicos nao cadastrados",
+                              "lineHeight": 1.35,
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "bDAbF",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "xqCRI",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/.paseo/…/dull-parrot",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "kXcgz",
+                          "name": "Botão Ir",
+                          "cornerRadius": 4,
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "padding": [
+                            2,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Nb4OD",
+                              "name": "Rótulo",
+                              "fill": "$fg",
+                              "content": "Ir",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "w7c23",
+                      "name": "Worktree DDC-629",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "t2nIzg",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Cey9C",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "E5i10",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "dV0ug",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-629",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "EFpwH",
+                                  "name": "Tipo",
+                                  "fill": "$muted",
+                                  "content": "feat",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "MHC0K",
+                              "name": "Descrição",
+                              "fill": "$muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "padronizar competencia mmaaaa",
+                              "lineHeight": 1.35,
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "bZpSX",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "VBA2a",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/.paseo/…/unique-lynx",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "fbgR6",
+                      "name": "Worktree fix/remover-infra-veezor-release",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "svDyZ",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "v1ysfN",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "QdbT8",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "I9ucH2",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "fix/remover-infra-veezor-release",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "f3avKY",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "VkxFE",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/.paseo/…/fix-remover-infra…",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "xyJCB",
+          "name": "2 · Agente esperando você",
+          "width": 320,
+          "layout": "vertical",
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "CPyyN",
+              "name": "Título do estado",
+              "fill": "$fg",
+              "content": "2 · Agente esperando você",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "xMefI",
+              "name": "Nota",
+              "fill": "$muted",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Card no topo com a última mensagem do agente; a worktree sai da lista abaixo",
+              "lineHeight": 1.35,
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "l62wp1",
+              "name": "Painel",
+              "clip": true,
+              "width": "fill_container",
+              "fill": "$panel",
+              "cornerRadius": 6,
+              "stroke": "$border",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "JeeM9",
+                  "name": "Cabeçalho",
+                  "width": "fill_container",
+                  "stroke": "$border",
+                  "strokeWidth": {
+                    "bottom": 1
+                  },
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "DiiIC",
+                      "name": "Título",
+                      "fill": "$fg",
+                      "content": "Worktrees · backend_v2",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "s2CLk9",
+                      "name": "Ações",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "A64McW",
+                          "name": "Total",
+                          "fill": "$muted",
+                          "content": "7",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Rmna5",
+                          "name": "Botão ↻",
+                          "cornerRadius": 4,
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "padding": [
+                            2,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "mPjKZ",
+                              "name": "Rótulo",
+                              "fill": "$fg",
+                              "content": "↻",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "bEZls",
+                  "name": "Lista",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "padding": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ZIcPY",
+                      "name": "Card esperando você",
+                      "width": "fill_container",
+                      "cornerRadius": 6,
+                      "stroke": "$border",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "padding": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "BbZiw",
+                          "name": "Topo",
+                          "width": "fill_container",
+                          "gap": 6,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ExUcI",
+                              "name": "Glifo",
+                              "fill": "$warn",
+                              "content": "◆",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "mIrSu",
+                              "name": "Título",
+                              "fill": "$warn",
+                              "content": "Esperando você",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "mal9d",
+                              "name": "Chave",
+                              "fill": "$muted",
+                              "content": "· DDC-630",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "BCFKO",
+                              "name": "Tempo",
+                              "fill": "$muted",
+                              "content": "· há 2 min",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "BgzGB",
+                          "name": "Última mensagem",
+                          "fill": "$muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Posso rodar a migration em homolog? Ela cria a tabela nota_fiscal_faturamento.",
+                          "lineHeight": 1.35,
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "x7AhI",
+                          "name": "Ação",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "hWF7I",
+                              "name": "Botão Responder →",
+                              "cornerRadius": 4,
+                              "stroke": "$border",
+                              "strokeWidth": 1,
+                              "padding": [
+                                2,
+                                8
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "SCL9U",
+                                  "name": "Rótulo",
+                                  "fill": "$warn",
+                                  "content": "Responder →",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "fkY9h",
+                      "name": "Espaço",
+                      "width": "fill_container",
+                      "height": 8
+                    },
+                    {
+                      "type": "frame",
+                      "id": "V2BLry",
+                      "name": "Worktree master",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "tuC0F",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ehbn5",
+                              "name": "Glifo",
+                              "fill": "$fg",
+                              "content": "›",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "H8ws3e",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "KPe7j",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "TbKlu",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "master",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "o4J6oq",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "rDjfq",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/Documents/backend_v2",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "u3IWf",
+                      "name": "Worktree DDC-658",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "YAMnD",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "C5Mxf",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "WpDDv",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "t1hg19",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-658",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "dU6wN",
+                                  "name": "Tipo",
+                                  "fill": "$muted",
+                                  "content": "fix",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "RGSqS",
+                              "name": "Descrição",
+                              "fill": "$muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "migrar arquivos s3",
+                              "lineHeight": 1.35,
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "QRzoX",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "M4voc8",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/wt/backend_v2/DDC-658",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "GTxsF",
+                          "name": "Botão Ir",
+                          "cornerRadius": 4,
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "padding": [
+                            2,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "YaDn3",
+                              "name": "Rótulo",
+                              "fill": "$fg",
+                              "content": "Ir",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "QLa1x",
+                      "name": "Worktree DDC-680",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "SvrHO",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "UrmPa",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "E2Prjm",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "rK8jZ",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-680",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "o9PtuQ",
+                                  "name": "Tipo",
+                                  "fill": "$muted",
+                                  "content": "chore",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "DujRC",
+                              "name": "Descrição",
+                              "fill": "$muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "remover sdk sankhya",
+                              "lineHeight": 1.35,
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "AFmxu",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "KNQgp",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/wt/backend_v2/DDC-680",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "dMNtf",
+                      "name": "Worktree DDC-649",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "rgftd",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Q4ZLY",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "T3mA02",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "urM9B",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-649",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "N4kQvT",
+                                  "name": "Tipo",
+                                  "fill": "$muted",
+                                  "content": "fix",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "bznQg",
+                              "name": "Descrição",
+                              "fill": "$muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "bloquear mnemonicos nao cadastrados",
+                              "lineHeight": 1.35,
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "XBf5q",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Nkx1f",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/.paseo/…/dull-parrot",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "oUVh6",
+                          "name": "Botão Ir",
+                          "cornerRadius": 4,
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "padding": [
+                            2,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "G9p6UO",
+                              "name": "Rótulo",
+                              "fill": "$fg",
+                              "content": "Ir",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "X42K2",
+                      "name": "Worktree DDC-629",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "ASWuM",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "u2fHh",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "Ah3va",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "axkDF",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-629",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "jKeIT",
+                                  "name": "Tipo",
+                                  "fill": "$muted",
+                                  "content": "feat",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "PSdxz",
+                              "name": "Descrição",
+                              "fill": "$muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "padronizar competencia mmaaaa",
+                              "lineHeight": 1.35,
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "HUU3L",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "e81mqN",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/.paseo/…/unique-lynx",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "NRCjw",
+                      "name": "Worktree fix/remover-infra-veezor-release",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "s1dy9",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ha4cc",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "SeP9O",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "oq80e",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "fix/remover-infra-veezor-release",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "GbyAK",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "QJkSw",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/.paseo/…/fix-remover-infra…",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "U60BI",
+          "name": "3 · Agente trabalhando",
+          "width": 320,
+          "layout": "vertical",
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "ltWGT",
+              "name": "Título do estado",
+              "fill": "$fg",
+              "content": "3 · Agente trabalhando",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "UVtLS",
+              "name": "Nota",
+              "fill": "$muted",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Spinner orbital no lugar do marcador e tempo desde que o painel viu o agente começar",
+              "lineHeight": 1.35,
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "fYHFU",
+              "name": "Painel",
+              "clip": true,
+              "width": "fill_container",
+              "fill": "$panel",
+              "cornerRadius": 6,
+              "stroke": "$border",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "b1Klwx",
+                  "name": "Cabeçalho",
+                  "width": "fill_container",
+                  "stroke": "$border",
+                  "strokeWidth": {
+                    "bottom": 1
+                  },
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "lviBl",
+                      "name": "Título",
+                      "fill": "$fg",
+                      "content": "Worktrees · backend_v2",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ho2bq",
+                      "name": "Ações",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "JLRWn",
+                          "name": "Total",
+                          "fill": "$muted",
+                          "content": "7",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "UqTYk",
+                          "name": "Botão ↻",
+                          "cornerRadius": 4,
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "padding": [
+                            2,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "wF3Bl",
+                              "name": "Rótulo",
+                              "fill": "$fg",
+                              "content": "↻",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "RlrB1",
+                  "name": "Lista",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "padding": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "FUgTQ",
+                      "name": "Worktree master",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "VL1oZ",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "iQ4Vq",
+                              "name": "Glifo",
+                              "fill": "$fg",
+                              "content": "›",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "VVnaZ",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "yv6DL",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "A3s9eW",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "master",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "kY5do",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "vPFbI",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/Documents/backend_v2",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "VLrEf",
+                      "name": "Worktree DDC-630",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "fQAzw",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "tZS6M",
+                              "name": "Glifo",
+                              "fill": "$muted",
+                              "content": "○",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "I4n9Y0",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "LfTxc",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "LW6mG",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-630",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "q7CDZ",
+                                  "name": "Tipo",
+                                  "fill": "$muted",
+                                  "content": "feat",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "w3aGr",
+                              "name": "Descrição",
+                              "fill": "$muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "sincronizar notas fiscais",
+                              "lineHeight": 1.35,
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Z42PR",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "upOIc",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/wt/backend_v2/DDC-630",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "riAZv",
+                          "name": "Botão Ir",
+                          "cornerRadius": 4,
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "padding": [
+                            2,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "D2ztKS",
+                              "name": "Rótulo",
+                              "fill": "$fg",
+                              "content": "Ir",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ryNlc",
+                      "name": "Worktree DDC-658",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "K5aUPc",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ZNT5y",
+                              "name": "Glifo",
+                              "fill": "$accent",
+                              "content": "◐",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "SUxhD",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "kS6po",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "xajsW",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-658",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "T3mHXv",
+                                  "name": "Tipo",
+                                  "fill": "$muted",
+                                  "content": "fix",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "EmEBY",
+                              "name": "Descrição",
+                              "fill": "$muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "migrar arquivos s3",
+                              "lineHeight": 1.35,
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Vs8Z3",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "u8JAVA",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/wt/backend_v2/DDC-658",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "a2OQn",
+                                  "name": "Parte 1",
+                                  "fill": "$accent",
+                                  "content": "· trabalhando há 4 min",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "tqcQZ",
+                          "name": "Botão Ir",
+                          "cornerRadius": 4,
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "padding": [
+                            2,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "gbvKJ",
+                              "name": "Rótulo",
+                              "fill": "$fg",
+                              "content": "Ir",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "WmO8g",
+                      "name": "Worktree DDC-680",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "gZBUY",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "wPrHG",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "uwn39",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "TJCCC",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-680",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "KAf9N",
+                                  "name": "Tipo",
+                                  "fill": "$muted",
+                                  "content": "chore",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "hdY8U",
+                              "name": "Descrição",
+                              "fill": "$muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "remover sdk sankhya",
+                              "lineHeight": 1.35,
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Vc7h9",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "XiQWP",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/wt/backend_v2/DDC-680",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "pP3FE",
+                      "name": "Worktree DDC-649",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Pxusn",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "XYuyz",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "IYO5L",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "AX3NT",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-649",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "S18XQm",
+                                  "name": "Tipo",
+                                  "fill": "$muted",
+                                  "content": "fix",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "PDqL8",
+                              "name": "Descrição",
+                              "fill": "$muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "bloquear mnemonicos nao cadastrados",
+                              "lineHeight": 1.35,
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "bPQcc",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Gm6yr",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/.paseo/…/dull-parrot",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "AlnAW",
+                          "name": "Botão Ir",
+                          "cornerRadius": 4,
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "padding": [
+                            2,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "USxIm",
+                              "name": "Rótulo",
+                              "fill": "$fg",
+                              "content": "Ir",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "XUabW",
+                      "name": "Worktree DDC-629",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "A18gx",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "YoOQ3",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "Wnhxy",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "QMCJ1",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-629",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "IrsGx",
+                                  "name": "Tipo",
+                                  "fill": "$muted",
+                                  "content": "feat",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "XbBrd",
+                              "name": "Descrição",
+                              "fill": "$muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "padronizar competencia mmaaaa",
+                              "lineHeight": 1.35,
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "LQuS6",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "V324L",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/.paseo/…/unique-lynx",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "KR8BJ",
+                      "name": "Worktree fix/remover-infra-veezor-release",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "A9Qha",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "LlyLZ",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "mzpPs",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "X796H",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "fix/remover-infra-veezor-release",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "J6Kjq6",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "TZg81",
+                                  "name": "Parte 0",
+                                  "fill": "$muted",
+                                  "content": "~/.paseo/…/fix-remover-infra…",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "pmRPW",
+          "name": "4 · Painel estreito",
+          "width": 200,
+          "layout": "vertical",
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "P0ZZj",
+              "name": "Título do estado",
+              "fill": "$fg",
+              "content": "4 · Painel estreito",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "WzFjx",
+              "name": "Nota",
+              "fill": "$muted",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Só a chave do card; pasta e descrição somem",
+              "lineHeight": 1.35,
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "uFW0t",
+              "name": "Painel",
+              "clip": true,
+              "width": "fill_container",
+              "fill": "$panel",
+              "cornerRadius": 6,
+              "stroke": "$border",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "PFEVA",
+                  "name": "Cabeçalho",
+                  "width": "fill_container",
+                  "stroke": "$border",
+                  "strokeWidth": {
+                    "bottom": 1
+                  },
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "z17dYq",
+                      "name": "Título",
+                      "fill": "$fg",
+                      "content": "backend_v2",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "qsPTU",
+                      "name": "Ações",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "d8Uwp",
+                          "name": "Total",
+                          "fill": "$muted",
+                          "content": "7",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "KLDYl",
+                          "name": "Botão ↻",
+                          "cornerRadius": 4,
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "padding": [
+                            2,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "n5ca8g",
+                              "name": "Rótulo",
+                              "fill": "$fg",
+                              "content": "↻",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rdiqn",
+                  "name": "Lista",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "padding": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "pHzED",
+                      "name": "Card esperando você",
+                      "width": "fill_container",
+                      "cornerRadius": 6,
+                      "stroke": "$border",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "padding": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "yEeDP",
+                          "name": "Topo",
+                          "width": "fill_container",
+                          "gap": 6,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "zXVtj",
+                              "name": "Glifo",
+                              "fill": "$warn",
+                              "content": "◆",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ibAPR",
+                              "name": "Título",
+                              "fill": "$warn",
+                              "content": "Esperando você",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Aumhm",
+                              "name": "Chave",
+                              "fill": "$muted",
+                              "content": "· DDC-630",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "czPgz",
+                          "name": "Última mensagem",
+                          "fill": "$muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Posso rodar a migration em homolog?",
+                          "lineHeight": 1.35,
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "VFWCU",
+                          "name": "Ação",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "vRVJY",
+                              "name": "Botão Responder →",
+                              "cornerRadius": 4,
+                              "stroke": "$border",
+                              "strokeWidth": 1,
+                              "padding": [
+                                2,
+                                8
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Ojlen",
+                                  "name": "Rótulo",
+                                  "fill": "$warn",
+                                  "content": "Responder →",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ebpMB",
+                      "name": "Espaço",
+                      "width": "fill_container",
+                      "height": 8
+                    },
+                    {
+                      "type": "frame",
+                      "id": "J8x9T8",
+                      "name": "Worktree master",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "S3Kmi6",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "u6z9y",
+                              "name": "Glifo",
+                              "fill": "$fg",
+                              "content": "›",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Rd12m",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "e7RSZ",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "ubwdg",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "master",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "S7XKHe",
+                      "name": "Worktree DDC-658",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "wAZS6",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Q3cVXM",
+                              "name": "Glifo",
+                              "fill": "$accent",
+                              "content": "◐",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "jAlfM",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "BZG73",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "lavyu",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-658",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "j7Mm1",
+                              "name": "Linha 3",
+                              "width": "fill_container",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "S9lUQL",
+                                  "name": "Parte 0",
+                                  "fill": "$accent",
+                                  "content": "trabalhando há 4 min",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "TYaEF",
+                          "name": "Botão Ir",
+                          "cornerRadius": 4,
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "padding": [
+                            2,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "q8iKOn",
+                              "name": "Rótulo",
+                              "fill": "$fg",
+                              "content": "Ir",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "V0A6a6",
+                      "name": "Worktree DDC-680",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "zrIIh",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "BQOce",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "KCghg",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "YGzVJ",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-680",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "MOqsW",
+                      "name": "Worktree DDC-649",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "ujwBs",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "WIAkW",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "k0aSh",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "yHkIa",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-649",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "LTONl",
+                          "name": "Botão Ir",
+                          "cornerRadius": 4,
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "padding": [
+                            2,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Z5d1Lj",
+                              "name": "Rótulo",
+                              "fill": "$fg",
+                              "content": "Ir",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "d77SGr",
+                      "name": "Worktree DDC-629",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "yBUJY",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Ts6Ak",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "MRbwA",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "mq2UB",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "DDC-629",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "dAgBz",
+                      "name": "Worktree fix/remover-infra-veezor-release",
+                      "width": "fill_container",
+                      "stroke": "$border",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        6
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "k9Eo8x",
+                          "name": "Estado",
+                          "width": 14,
+                          "height": 18,
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "qzw0f",
+                          "name": "Texto",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "xJeil",
+                              "name": "Linha 1",
+                              "width": "fill_container",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "FiUTI",
+                                  "name": "Título",
+                                  "fill": "$fg",
+                                  "content": "remover-infra…",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "bg": {
+      "type": "color",
+      "value": "#15171C"
+    },
+    "panel": {
+      "type": "color",
+      "value": "#1B1E24"
+    },
+    "row-current": {
+      "type": "color",
+      "value": "#222733"
+    },
+    "row-hover": {
+      "type": "color",
+      "value": "#20232A"
+    },
+    "border": {
+      "type": "color",
+      "value": "#2A2E37"
+    },
+    "fg": {
+      "type": "color",
+      "value": "#D9DCE2"
+    },
+    "muted": {
+      "type": "color",
+      "value": "#848B97"
+    },
+    "accent": {
+      "type": "color",
+      "value": "#7AA2F7"
+    },
+    "warn": {
+      "type": "color",
+      "value": "#E5A64A"
+    },
+    "warn-surface": {
+      "type": "color",
+      "value": "#2B2418"
+    },
+    "on-warn": {
+      "type": "color",
+      "value": "#1A1307"
+    },
+    "success": {
+      "type": "color",
+      "value": "#8CC28A"
+    },
+    "chip": {
+      "type": "color",
+      "value": "#262A33"
+    }
+  },
+  "fileToken": "1a08edff-6d1b-4462-a916-60e2de406b4e"
+}
