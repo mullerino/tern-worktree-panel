@@ -490,7 +490,10 @@ local function check()
 	local scratch = tern.plugin.data .. "/scratch/" .. string.format("%d", tern.now())
 	local function finish()
 		pcall(tern.fs.remove, scratch)
-		state.status, state.checking = next, false
+		for path, status in next do
+			state.status[path] = status
+		end
+		state.checking = false
 		redraw()
 		if state.recheck then
 			state.recheck = false
