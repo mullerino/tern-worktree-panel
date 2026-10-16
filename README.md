@@ -37,7 +37,11 @@ A worktree whose agent waits for an answer moves to a card at the top, with the 
 | A waiting card or `Reply` | Focuses that agent |
 | `↻` | Reads the worktree list again |
 | `+` | Asks for a branch name and creates a worktree on that new branch with `tern-wt create --new` |
-| Right-click on a worktree card | Open tab, Git view, Copy path, Remove worktree (not on the main checkout) |
+| Right-click on a worktree card | New agent, Open tab, Git view, Copy path, Remove worktree (not on the main checkout) |
+
+**New agent** asks for a task and starts an omp agent in a new tab in that worktree.
+
+An agent waiting for an answer gets a card at the top even when it runs in another repository; the card names that folder. When an agent starts waiting in a tab you are not looking at, a toast shows where and its last message. With the status bar on, a `N waiting` segment counts the waiting agents; clicking it, or the palette command **Worktrees: go to the agent waiting longest**, focuses the one that has waited longest.
 
 **Remove worktree** asks first, then runs `tern-wt remove`. It removes only worktrees tern-worktrees created; for one with uncommitted work it stops and offers **Force remove**, which discards that work. The branch follows tern-worktrees' teardown policy (by default it is deleted only when merged).
 
