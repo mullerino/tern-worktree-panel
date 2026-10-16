@@ -6,7 +6,7 @@
       "id": "E5nku",
       "x": 0,
       "y": 0,
-      "name": "Worktree panel · estados v3",
+      "name": "Worktree panel · states",
       "fill": "$bg",
       "gap": 36,
       "padding": 40,
@@ -14,7 +14,7 @@
         {
           "type": "frame",
           "id": "OP9of",
-          "name": "1 · Lista normal",
+          "name": "1 · Worktree list",
           "width": 320,
           "layout": "vertical",
           "gap": 8,
@@ -22,9 +22,9 @@
             {
               "type": "text",
               "id": "r39LOv",
-              "name": "Título do estado",
+              "name": "State title",
               "fill": "$fg",
-              "content": "1 · Lista normal",
+              "content": "1 · Worktree list",
               "fontFamily": "Inter",
               "fontSize": 14,
               "fontWeight": "600"
@@ -32,11 +32,11 @@
             {
               "type": "text",
               "id": "TRgMb",
-              "name": "Nota",
+              "name": "Note",
               "fill": "$muted",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "› worktree da aba atual · ○ agente parado · “Ir” marca a worktree com aba aberta; sem ela, o clique no card abre uma aba",
+              "content": "Accent bar: worktree of the focused pane · ○ idle agent · “Go”: a tab is open there; without it, a click opens one",
               "lineHeight": 1.35,
               "fontFamily": "Inter",
               "fontSize": 11,
@@ -45,7 +45,7 @@
             {
               "type": "frame",
               "id": "NUtjC",
-              "name": "Painel",
+              "name": "Panel",
               "clip": true,
               "width": "fill_container",
               "fill": "$panel",
@@ -57,7 +57,7 @@
                 {
                   "type": "frame",
                   "id": "nsuva",
-                  "name": "Cabeçalho",
+                  "name": "Header",
                   "width": "fill_container",
                   "stroke": "$border",
                   "strokeWidth": {
@@ -73,9 +73,9 @@
                     {
                       "type": "text",
                       "id": "ZvOyX",
-                      "name": "Título",
+                      "name": "Title",
                       "fill": "$fg",
-                      "content": "Worktrees · backend_v2",
+                      "content": "Worktrees · acme-api",
                       "fontFamily": "Inter",
                       "fontSize": 12,
                       "fontWeight": "700"
@@ -83,14 +83,14 @@
                     {
                       "type": "frame",
                       "id": "tEM0J",
-                      "name": "Ações",
+                      "name": "Actions",
                       "gap": 8,
                       "alignItems": "center",
                       "children": [
                         {
                           "type": "text",
                           "id": "rIehc",
-                          "name": "Total",
+                          "name": "Count",
                           "fill": "$muted",
                           "content": "7",
                           "fontFamily": "Inter",
@@ -100,7 +100,7 @@
                         {
                           "type": "frame",
                           "id": "hTnPN",
-                          "name": "Botão ↻",
+                          "name": "Refresh button",
                           "cornerRadius": 4,
                           "stroke": "$border",
                           "strokeWidth": 1,
@@ -112,7 +112,7 @@
                             {
                               "type": "text",
                               "id": "jghTY",
-                              "name": "Rótulo",
+                              "name": "Label",
                               "fill": "$fg",
                               "content": "↻",
                               "fontFamily": "Inter",
@@ -128,7 +128,7 @@
                 {
                   "type": "frame",
                   "id": "NGW4n",
-                  "name": "Lista",
+                  "name": "List",
                   "width": "fill_container",
                   "layout": "vertical",
                   "padding": 8,
@@ -136,7 +136,7 @@
                     {
                       "type": "frame",
                       "id": "O4juJI",
-                      "name": "Worktree master",
+                      "name": "Worktree main",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -151,7 +151,7 @@
                         {
                           "type": "frame",
                           "id": "IcvZ9",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center",
@@ -159,7 +159,7 @@
                             {
                               "type": "text",
                               "id": "z2l5Fe",
-                              "name": "Glifo",
+                              "name": "Glyph",
                               "fill": "$fg",
                               "content": "›",
                               "fontFamily": "Inter",
@@ -171,7 +171,7 @@
                         {
                           "type": "frame",
                           "id": "SSxuE",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -179,7 +179,7 @@
                             {
                               "type": "frame",
                               "id": "ruhCi",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -187,9 +187,9 @@
                                 {
                                   "type": "text",
                                   "id": "YvFQe",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "master",
+                                  "content": "main",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "700"
@@ -199,16 +199,16 @@
                             {
                               "type": "frame",
                               "id": "t4vgkR",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "A0oUjz",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/Documents/backend_v2",
+                                  "content": "~/src/acme-api",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -222,7 +222,7 @@
                     {
                       "type": "frame",
                       "id": "K8jzl1",
-                      "name": "Worktree DDC-630",
+                      "name": "Worktree APP-142",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -237,7 +237,7 @@
                         {
                           "type": "frame",
                           "id": "jJStg",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center",
@@ -245,7 +245,7 @@
                             {
                               "type": "text",
                               "id": "G1iEH",
-                              "name": "Glifo",
+                              "name": "Glyph",
                               "fill": "$muted",
                               "content": "○",
                               "fontFamily": "Inter",
@@ -257,7 +257,7 @@
                         {
                           "type": "frame",
                           "id": "Vpsrc",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -265,7 +265,7 @@
                             {
                               "type": "frame",
                               "id": "APN9V",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -273,9 +273,9 @@
                                 {
                                   "type": "text",
                                   "id": "UFAqK",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-630",
+                                  "content": "APP-142",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -283,7 +283,7 @@
                                 {
                                   "type": "text",
                                   "id": "SrRKL",
-                                  "name": "Tipo",
+                                  "name": "Kind",
                                   "fill": "$muted",
                                   "content": "feat",
                                   "fontFamily": "Inter",
@@ -295,11 +295,11 @@
                             {
                               "type": "text",
                               "id": "b1Tq5",
-                              "name": "Descrição",
+                              "name": "Summary",
                               "fill": "$muted",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "sincronizar notas fiscais",
+                              "content": "oauth login",
                               "lineHeight": 1.35,
                               "fontFamily": "Inter",
                               "fontSize": 11,
@@ -308,16 +308,16 @@
                             {
                               "type": "frame",
                               "id": "ObGh2",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "bhVVK",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/wt/backend_v2/DDC-630",
+                                  "content": "~/wt/acme-api/APP-142",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -329,7 +329,7 @@
                         {
                           "type": "frame",
                           "id": "BjTyJ",
-                          "name": "Botão Ir",
+                          "name": "Go badge",
                           "cornerRadius": 4,
                           "stroke": "$border",
                           "strokeWidth": 1,
@@ -341,9 +341,9 @@
                             {
                               "type": "text",
                               "id": "RyIPq",
-                              "name": "Rótulo",
+                              "name": "Label",
                               "fill": "$fg",
-                              "content": "Ir",
+                              "content": "Go",
                               "fontFamily": "Inter",
                               "fontSize": 11,
                               "fontWeight": "normal"
@@ -355,7 +355,7 @@
                     {
                       "type": "frame",
                       "id": "Rh5rt",
-                      "name": "Worktree DDC-658",
+                      "name": "Worktree APP-163",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -370,7 +370,7 @@
                         {
                           "type": "frame",
                           "id": "PcA4j",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -378,7 +378,7 @@
                         {
                           "type": "frame",
                           "id": "RpY94",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -386,7 +386,7 @@
                             {
                               "type": "frame",
                               "id": "YDAK7",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -394,9 +394,9 @@
                                 {
                                   "type": "text",
                                   "id": "xSTJN",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-658",
+                                  "content": "APP-163",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -404,7 +404,7 @@
                                 {
                                   "type": "text",
                                   "id": "ZbwZo",
-                                  "name": "Tipo",
+                                  "name": "Kind",
                                   "fill": "$muted",
                                   "content": "fix",
                                   "fontFamily": "Inter",
@@ -416,11 +416,11 @@
                             {
                               "type": "text",
                               "id": "C2b1F",
-                              "name": "Descrição",
+                              "name": "Summary",
                               "fill": "$muted",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "migrar arquivos s3",
+                              "content": "billing export",
                               "lineHeight": 1.35,
                               "fontFamily": "Inter",
                               "fontSize": 11,
@@ -429,16 +429,16 @@
                             {
                               "type": "frame",
                               "id": "ZRHrf",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "RbA0S",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/wt/backend_v2/DDC-658",
+                                  "content": "~/wt/acme-api/APP-163",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -450,7 +450,7 @@
                         {
                           "type": "frame",
                           "id": "PEu0p",
-                          "name": "Botão Ir",
+                          "name": "Go badge",
                           "cornerRadius": 4,
                           "stroke": "$border",
                           "strokeWidth": 1,
@@ -462,9 +462,9 @@
                             {
                               "type": "text",
                               "id": "S7Qno",
-                              "name": "Rótulo",
+                              "name": "Label",
                               "fill": "$fg",
-                              "content": "Ir",
+                              "content": "Go",
                               "fontFamily": "Inter",
                               "fontSize": 11,
                               "fontWeight": "normal"
@@ -476,7 +476,7 @@
                     {
                       "type": "frame",
                       "id": "fVNjb",
-                      "name": "Worktree DDC-680",
+                      "name": "Worktree APP-171",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -491,7 +491,7 @@
                         {
                           "type": "frame",
                           "id": "YT0MR",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -499,7 +499,7 @@
                         {
                           "type": "frame",
                           "id": "Gj62D",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -507,7 +507,7 @@
                             {
                               "type": "frame",
                               "id": "j4DNgQ",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -515,9 +515,9 @@
                                 {
                                   "type": "text",
                                   "id": "JlEvD",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-680",
+                                  "content": "APP-171",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -525,9 +525,9 @@
                                 {
                                   "type": "text",
                                   "id": "cIGr6",
-                                  "name": "Tipo",
+                                  "name": "Kind",
                                   "fill": "$muted",
-                                  "content": "chore",
+                                  "content": "perf",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -537,11 +537,11 @@
                             {
                               "type": "text",
                               "id": "L6lcy8",
-                              "name": "Descrição",
+                              "name": "Summary",
                               "fill": "$muted",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "remover sdk sankhya",
+                              "content": "faster search index",
                               "lineHeight": 1.35,
                               "fontFamily": "Inter",
                               "fontSize": 11,
@@ -550,16 +550,16 @@
                             {
                               "type": "frame",
                               "id": "S6Zsx",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "QXaVS",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/wt/backend_v2/DDC-680",
+                                  "content": "~/wt/acme-api/APP-171",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -573,7 +573,7 @@
                     {
                       "type": "frame",
                       "id": "x0RsG",
-                      "name": "Worktree DDC-649",
+                      "name": "Worktree APP-157",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -588,7 +588,7 @@
                         {
                           "type": "frame",
                           "id": "wZg1A",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -596,7 +596,7 @@
                         {
                           "type": "frame",
                           "id": "Af88a",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -604,7 +604,7 @@
                             {
                               "type": "frame",
                               "id": "N758M",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -612,9 +612,9 @@
                                 {
                                   "type": "text",
                                   "id": "vj4fq",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-649",
+                                  "content": "APP-157",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -622,7 +622,7 @@
                                 {
                                   "type": "text",
                                   "id": "bnKxA",
-                                  "name": "Tipo",
+                                  "name": "Kind",
                                   "fill": "$muted",
                                   "content": "fix",
                                   "fontFamily": "Inter",
@@ -634,11 +634,11 @@
                             {
                               "type": "text",
                               "id": "vDyaB",
-                              "name": "Descrição",
+                              "name": "Summary",
                               "fill": "$muted",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "bloquear mnemonicos nao cadastrados",
+                              "content": "retry failed webhooks",
                               "lineHeight": 1.35,
                               "fontFamily": "Inter",
                               "fontSize": 11,
@@ -647,16 +647,16 @@
                             {
                               "type": "frame",
                               "id": "bDAbF",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "xqCRI",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/.paseo/…/dull-parrot",
+                                  "content": "~/.paseo/…/quiet-otter",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -668,7 +668,7 @@
                         {
                           "type": "frame",
                           "id": "kXcgz",
-                          "name": "Botão Ir",
+                          "name": "Go badge",
                           "cornerRadius": 4,
                           "stroke": "$border",
                           "strokeWidth": 1,
@@ -680,9 +680,9 @@
                             {
                               "type": "text",
                               "id": "Nb4OD",
-                              "name": "Rótulo",
+                              "name": "Label",
                               "fill": "$fg",
-                              "content": "Ir",
+                              "content": "Go",
                               "fontFamily": "Inter",
                               "fontSize": 11,
                               "fontWeight": "normal"
@@ -694,7 +694,7 @@
                     {
                       "type": "frame",
                       "id": "w7c23",
-                      "name": "Worktree DDC-629",
+                      "name": "Worktree APP-188",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -709,7 +709,7 @@
                         {
                           "type": "frame",
                           "id": "t2nIzg",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -717,7 +717,7 @@
                         {
                           "type": "frame",
                           "id": "Cey9C",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -725,7 +725,7 @@
                             {
                               "type": "frame",
                               "id": "E5i10",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -733,9 +733,9 @@
                                 {
                                   "type": "text",
                                   "id": "dV0ug",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-629",
+                                  "content": "APP-188",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -743,7 +743,7 @@
                                 {
                                   "type": "text",
                                   "id": "EFpwH",
-                                  "name": "Tipo",
+                                  "name": "Kind",
                                   "fill": "$muted",
                                   "content": "feat",
                                   "fontFamily": "Inter",
@@ -755,11 +755,11 @@
                             {
                               "type": "text",
                               "id": "MHC0K",
-                              "name": "Descrição",
+                              "name": "Summary",
                               "fill": "$muted",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "padronizar competencia mmaaaa",
+                              "content": "dark mode toggle",
                               "lineHeight": 1.35,
                               "fontFamily": "Inter",
                               "fontSize": 11,
@@ -768,16 +768,16 @@
                             {
                               "type": "frame",
                               "id": "bZpSX",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "VBA2a",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/.paseo/…/unique-lynx",
+                                  "content": "~/.paseo/…/brave-heron",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -791,7 +791,7 @@
                     {
                       "type": "frame",
                       "id": "fbgR6",
-                      "name": "Worktree fix/remover-infra-veezor-release",
+                      "name": "Worktree chore/upgrade-eslint",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -806,7 +806,7 @@
                         {
                           "type": "frame",
                           "id": "svDyZ",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -814,7 +814,7 @@
                         {
                           "type": "frame",
                           "id": "v1ysfN",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -822,7 +822,7 @@
                             {
                               "type": "frame",
                               "id": "QdbT8",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -830,9 +830,9 @@
                                 {
                                   "type": "text",
                                   "id": "I9ucH2",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "fix/remover-infra-veezor-release",
+                                  "content": "chore/upgrade-eslint",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -842,16 +842,16 @@
                             {
                               "type": "frame",
                               "id": "f3avKY",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "VkxFE",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/.paseo/…/fix-remover-infra…",
+                                  "content": "~/.paseo/…/upgrade-eslint",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -871,7 +871,7 @@
         {
           "type": "frame",
           "id": "xyJCB",
-          "name": "2 · Agente esperando você",
+          "name": "2 · Agent waiting for you",
           "width": 320,
           "layout": "vertical",
           "gap": 8,
@@ -879,9 +879,9 @@
             {
               "type": "text",
               "id": "CPyyN",
-              "name": "Título do estado",
+              "name": "State title",
               "fill": "$fg",
-              "content": "2 · Agente esperando você",
+              "content": "2 · Agent waiting for you",
               "fontFamily": "Inter",
               "fontSize": 14,
               "fontWeight": "600"
@@ -889,11 +889,11 @@
             {
               "type": "text",
               "id": "xMefI",
-              "name": "Nota",
+              "name": "Note",
               "fill": "$muted",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Card no topo com a última mensagem do agente; a worktree sai da lista abaixo",
+              "content": "A card at the top with the agent’s last message; the worktree leaves the list below",
               "lineHeight": 1.35,
               "fontFamily": "Inter",
               "fontSize": 11,
@@ -902,7 +902,7 @@
             {
               "type": "frame",
               "id": "l62wp1",
-              "name": "Painel",
+              "name": "Panel",
               "clip": true,
               "width": "fill_container",
               "fill": "$panel",
@@ -914,7 +914,7 @@
                 {
                   "type": "frame",
                   "id": "JeeM9",
-                  "name": "Cabeçalho",
+                  "name": "Header",
                   "width": "fill_container",
                   "stroke": "$border",
                   "strokeWidth": {
@@ -930,9 +930,9 @@
                     {
                       "type": "text",
                       "id": "DiiIC",
-                      "name": "Título",
+                      "name": "Title",
                       "fill": "$fg",
-                      "content": "Worktrees · backend_v2",
+                      "content": "Worktrees · acme-api",
                       "fontFamily": "Inter",
                       "fontSize": 12,
                       "fontWeight": "700"
@@ -940,14 +940,14 @@
                     {
                       "type": "frame",
                       "id": "s2CLk9",
-                      "name": "Ações",
+                      "name": "Actions",
                       "gap": 8,
                       "alignItems": "center",
                       "children": [
                         {
                           "type": "text",
                           "id": "A64McW",
-                          "name": "Total",
+                          "name": "Count",
                           "fill": "$muted",
                           "content": "7",
                           "fontFamily": "Inter",
@@ -957,7 +957,7 @@
                         {
                           "type": "frame",
                           "id": "Rmna5",
-                          "name": "Botão ↻",
+                          "name": "Refresh button",
                           "cornerRadius": 4,
                           "stroke": "$border",
                           "strokeWidth": 1,
@@ -969,7 +969,7 @@
                             {
                               "type": "text",
                               "id": "mPjKZ",
-                              "name": "Rótulo",
+                              "name": "Label",
                               "fill": "$fg",
                               "content": "↻",
                               "fontFamily": "Inter",
@@ -985,7 +985,7 @@
                 {
                   "type": "frame",
                   "id": "bEZls",
-                  "name": "Lista",
+                  "name": "List",
                   "width": "fill_container",
                   "layout": "vertical",
                   "padding": 8,
@@ -993,7 +993,7 @@
                     {
                       "type": "frame",
                       "id": "ZIcPY",
-                      "name": "Card esperando você",
+                      "name": "Waiting card",
                       "width": "fill_container",
                       "cornerRadius": 6,
                       "stroke": "$border",
@@ -1005,7 +1005,7 @@
                         {
                           "type": "frame",
                           "id": "BbZiw",
-                          "name": "Topo",
+                          "name": "Top",
                           "width": "fill_container",
                           "gap": 6,
                           "alignItems": "center",
@@ -1013,7 +1013,7 @@
                             {
                               "type": "text",
                               "id": "ExUcI",
-                              "name": "Glifo",
+                              "name": "Glyph",
                               "fill": "$warn",
                               "content": "◆",
                               "fontFamily": "Inter",
@@ -1023,9 +1023,9 @@
                             {
                               "type": "text",
                               "id": "mIrSu",
-                              "name": "Título",
+                              "name": "Title",
                               "fill": "$warn",
-                              "content": "Esperando você",
+                              "content": "Waiting for you",
                               "fontFamily": "Inter",
                               "fontSize": 11,
                               "fontWeight": "600"
@@ -1033,9 +1033,9 @@
                             {
                               "type": "text",
                               "id": "mal9d",
-                              "name": "Chave",
+                              "name": "Key",
                               "fill": "$muted",
-                              "content": "· DDC-630",
+                              "content": "· APP-157",
                               "fontFamily": "Inter",
                               "fontSize": 11,
                               "fontWeight": "normal"
@@ -1043,9 +1043,9 @@
                             {
                               "type": "text",
                               "id": "BCFKO",
-                              "name": "Tempo",
+                              "name": "Time",
                               "fill": "$muted",
-                              "content": "· há 2 min",
+                              "content": "· 2m",
                               "fontFamily": "Inter",
                               "fontSize": 11,
                               "fontWeight": "normal"
@@ -1055,11 +1055,11 @@
                         {
                           "type": "text",
                           "id": "BgzGB",
-                          "name": "Última mensagem",
+                          "name": "Last message",
                           "fill": "$muted",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
-                          "content": "Posso rodar a migration em homolog? Ela cria a tabela nota_fiscal_faturamento.",
+                          "content": "The webhook retries pass locally. Should I also add a dead-letter queue for events that fail 5 times?",
                           "lineHeight": 1.35,
                           "fontFamily": "Inter",
                           "fontSize": 12,
@@ -1068,13 +1068,13 @@
                         {
                           "type": "frame",
                           "id": "x7AhI",
-                          "name": "Ação",
+                          "name": "Action",
                           "gap": 4,
                           "children": [
                             {
                               "type": "frame",
                               "id": "hWF7I",
-                              "name": "Botão Responder →",
+                              "name": "Reply button",
                               "cornerRadius": 4,
                               "stroke": "$border",
                               "strokeWidth": 1,
@@ -1086,9 +1086,9 @@
                                 {
                                   "type": "text",
                                   "id": "SCL9U",
-                                  "name": "Rótulo",
+                                  "name": "Label",
                                   "fill": "$warn",
-                                  "content": "Responder →",
+                                  "content": "Reply →",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -1102,14 +1102,14 @@
                     {
                       "type": "frame",
                       "id": "fkY9h",
-                      "name": "Espaço",
+                      "name": "Spacer",
                       "width": "fill_container",
                       "height": 8
                     },
                     {
                       "type": "frame",
                       "id": "V2BLry",
-                      "name": "Worktree master",
+                      "name": "Worktree main",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -1124,7 +1124,7 @@
                         {
                           "type": "frame",
                           "id": "tuC0F",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center",
@@ -1132,7 +1132,7 @@
                             {
                               "type": "text",
                               "id": "ehbn5",
-                              "name": "Glifo",
+                              "name": "Glyph",
                               "fill": "$fg",
                               "content": "›",
                               "fontFamily": "Inter",
@@ -1144,7 +1144,7 @@
                         {
                           "type": "frame",
                           "id": "H8ws3e",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -1152,7 +1152,7 @@
                             {
                               "type": "frame",
                               "id": "KPe7j",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -1160,9 +1160,9 @@
                                 {
                                   "type": "text",
                                   "id": "TbKlu",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "master",
+                                  "content": "main",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "700"
@@ -1172,16 +1172,16 @@
                             {
                               "type": "frame",
                               "id": "o4J6oq",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "rDjfq",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/Documents/backend_v2",
+                                  "content": "~/src/acme-api",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -1195,7 +1195,7 @@
                     {
                       "type": "frame",
                       "id": "u3IWf",
-                      "name": "Worktree DDC-658",
+                      "name": "Worktree APP-163",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -1210,7 +1210,7 @@
                         {
                           "type": "frame",
                           "id": "YAMnD",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -1218,7 +1218,7 @@
                         {
                           "type": "frame",
                           "id": "C5Mxf",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -1226,7 +1226,7 @@
                             {
                               "type": "frame",
                               "id": "WpDDv",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -1234,9 +1234,9 @@
                                 {
                                   "type": "text",
                                   "id": "t1hg19",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-658",
+                                  "content": "APP-163",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -1244,7 +1244,7 @@
                                 {
                                   "type": "text",
                                   "id": "dU6wN",
-                                  "name": "Tipo",
+                                  "name": "Kind",
                                   "fill": "$muted",
                                   "content": "fix",
                                   "fontFamily": "Inter",
@@ -1256,11 +1256,11 @@
                             {
                               "type": "text",
                               "id": "RGSqS",
-                              "name": "Descrição",
+                              "name": "Summary",
                               "fill": "$muted",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "migrar arquivos s3",
+                              "content": "billing export",
                               "lineHeight": 1.35,
                               "fontFamily": "Inter",
                               "fontSize": 11,
@@ -1269,16 +1269,16 @@
                             {
                               "type": "frame",
                               "id": "QRzoX",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "M4voc8",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/wt/backend_v2/DDC-658",
+                                  "content": "~/wt/acme-api/APP-163",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -1290,7 +1290,7 @@
                         {
                           "type": "frame",
                           "id": "GTxsF",
-                          "name": "Botão Ir",
+                          "name": "Go badge",
                           "cornerRadius": 4,
                           "stroke": "$border",
                           "strokeWidth": 1,
@@ -1302,9 +1302,9 @@
                             {
                               "type": "text",
                               "id": "YaDn3",
-                              "name": "Rótulo",
+                              "name": "Label",
                               "fill": "$fg",
-                              "content": "Ir",
+                              "content": "Go",
                               "fontFamily": "Inter",
                               "fontSize": 11,
                               "fontWeight": "normal"
@@ -1316,7 +1316,7 @@
                     {
                       "type": "frame",
                       "id": "QLa1x",
-                      "name": "Worktree DDC-680",
+                      "name": "Worktree APP-171",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -1331,7 +1331,7 @@
                         {
                           "type": "frame",
                           "id": "SvrHO",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -1339,7 +1339,7 @@
                         {
                           "type": "frame",
                           "id": "UrmPa",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -1347,7 +1347,7 @@
                             {
                               "type": "frame",
                               "id": "E2Prjm",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -1355,9 +1355,9 @@
                                 {
                                   "type": "text",
                                   "id": "rK8jZ",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-680",
+                                  "content": "APP-171",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -1365,9 +1365,9 @@
                                 {
                                   "type": "text",
                                   "id": "o9PtuQ",
-                                  "name": "Tipo",
+                                  "name": "Kind",
                                   "fill": "$muted",
-                                  "content": "chore",
+                                  "content": "perf",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -1377,11 +1377,11 @@
                             {
                               "type": "text",
                               "id": "DujRC",
-                              "name": "Descrição",
+                              "name": "Summary",
                               "fill": "$muted",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "remover sdk sankhya",
+                              "content": "faster search index",
                               "lineHeight": 1.35,
                               "fontFamily": "Inter",
                               "fontSize": 11,
@@ -1390,16 +1390,16 @@
                             {
                               "type": "frame",
                               "id": "AFmxu",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "KNQgp",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/wt/backend_v2/DDC-680",
+                                  "content": "~/wt/acme-api/APP-171",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -1413,7 +1413,7 @@
                     {
                       "type": "frame",
                       "id": "dMNtf",
-                      "name": "Worktree DDC-649",
+                      "name": "Worktree APP-157",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -1428,7 +1428,7 @@
                         {
                           "type": "frame",
                           "id": "rgftd",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -1436,7 +1436,7 @@
                         {
                           "type": "frame",
                           "id": "Q4ZLY",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -1444,7 +1444,7 @@
                             {
                               "type": "frame",
                               "id": "T3mA02",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -1452,9 +1452,9 @@
                                 {
                                   "type": "text",
                                   "id": "urM9B",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-649",
+                                  "content": "APP-157",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -1462,7 +1462,7 @@
                                 {
                                   "type": "text",
                                   "id": "N4kQvT",
-                                  "name": "Tipo",
+                                  "name": "Kind",
                                   "fill": "$muted",
                                   "content": "fix",
                                   "fontFamily": "Inter",
@@ -1474,11 +1474,11 @@
                             {
                               "type": "text",
                               "id": "bznQg",
-                              "name": "Descrição",
+                              "name": "Summary",
                               "fill": "$muted",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "bloquear mnemonicos nao cadastrados",
+                              "content": "retry failed webhooks",
                               "lineHeight": 1.35,
                               "fontFamily": "Inter",
                               "fontSize": 11,
@@ -1487,16 +1487,16 @@
                             {
                               "type": "frame",
                               "id": "XBf5q",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "Nkx1f",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/.paseo/…/dull-parrot",
+                                  "content": "~/.paseo/…/quiet-otter",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -1508,7 +1508,7 @@
                         {
                           "type": "frame",
                           "id": "oUVh6",
-                          "name": "Botão Ir",
+                          "name": "Go badge",
                           "cornerRadius": 4,
                           "stroke": "$border",
                           "strokeWidth": 1,
@@ -1520,9 +1520,9 @@
                             {
                               "type": "text",
                               "id": "G9p6UO",
-                              "name": "Rótulo",
+                              "name": "Label",
                               "fill": "$fg",
-                              "content": "Ir",
+                              "content": "Go",
                               "fontFamily": "Inter",
                               "fontSize": 11,
                               "fontWeight": "normal"
@@ -1534,7 +1534,7 @@
                     {
                       "type": "frame",
                       "id": "X42K2",
-                      "name": "Worktree DDC-629",
+                      "name": "Worktree APP-188",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -1549,7 +1549,7 @@
                         {
                           "type": "frame",
                           "id": "ASWuM",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -1557,7 +1557,7 @@
                         {
                           "type": "frame",
                           "id": "u2fHh",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -1565,7 +1565,7 @@
                             {
                               "type": "frame",
                               "id": "Ah3va",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -1573,9 +1573,9 @@
                                 {
                                   "type": "text",
                                   "id": "axkDF",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-629",
+                                  "content": "APP-188",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -1583,7 +1583,7 @@
                                 {
                                   "type": "text",
                                   "id": "jKeIT",
-                                  "name": "Tipo",
+                                  "name": "Kind",
                                   "fill": "$muted",
                                   "content": "feat",
                                   "fontFamily": "Inter",
@@ -1595,11 +1595,11 @@
                             {
                               "type": "text",
                               "id": "PSdxz",
-                              "name": "Descrição",
+                              "name": "Summary",
                               "fill": "$muted",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "padronizar competencia mmaaaa",
+                              "content": "dark mode toggle",
                               "lineHeight": 1.35,
                               "fontFamily": "Inter",
                               "fontSize": 11,
@@ -1608,16 +1608,16 @@
                             {
                               "type": "frame",
                               "id": "HUU3L",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "e81mqN",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/.paseo/…/unique-lynx",
+                                  "content": "~/.paseo/…/brave-heron",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -1631,7 +1631,7 @@
                     {
                       "type": "frame",
                       "id": "NRCjw",
-                      "name": "Worktree fix/remover-infra-veezor-release",
+                      "name": "Worktree chore/upgrade-eslint",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -1646,7 +1646,7 @@
                         {
                           "type": "frame",
                           "id": "s1dy9",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -1654,7 +1654,7 @@
                         {
                           "type": "frame",
                           "id": "ha4cc",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -1662,7 +1662,7 @@
                             {
                               "type": "frame",
                               "id": "SeP9O",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -1670,9 +1670,9 @@
                                 {
                                   "type": "text",
                                   "id": "oq80e",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "fix/remover-infra-veezor-release",
+                                  "content": "chore/upgrade-eslint",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -1682,16 +1682,16 @@
                             {
                               "type": "frame",
                               "id": "GbyAK",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "QJkSw",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/.paseo/…/fix-remover-infra…",
+                                  "content": "~/.paseo/…/upgrade-eslint",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -1711,7 +1711,7 @@
         {
           "type": "frame",
           "id": "U60BI",
-          "name": "3 · Agente trabalhando",
+          "name": "3 · Agent working",
           "width": 320,
           "layout": "vertical",
           "gap": 8,
@@ -1719,9 +1719,9 @@
             {
               "type": "text",
               "id": "ltWGT",
-              "name": "Título do estado",
+              "name": "State title",
               "fill": "$fg",
-              "content": "3 · Agente trabalhando",
+              "content": "3 · Agent working",
               "fontFamily": "Inter",
               "fontSize": 14,
               "fontWeight": "600"
@@ -1729,11 +1729,11 @@
             {
               "type": "text",
               "id": "UVtLS",
-              "name": "Nota",
+              "name": "Note",
               "fill": "$muted",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Spinner orbital no lugar do marcador e tempo desde que o painel viu o agente começar",
+              "content": "An orbit spinner replaces the marker, with the time since the panel saw the agent start",
               "lineHeight": 1.35,
               "fontFamily": "Inter",
               "fontSize": 11,
@@ -1742,7 +1742,7 @@
             {
               "type": "frame",
               "id": "fYHFU",
-              "name": "Painel",
+              "name": "Panel",
               "clip": true,
               "width": "fill_container",
               "fill": "$panel",
@@ -1754,7 +1754,7 @@
                 {
                   "type": "frame",
                   "id": "b1Klwx",
-                  "name": "Cabeçalho",
+                  "name": "Header",
                   "width": "fill_container",
                   "stroke": "$border",
                   "strokeWidth": {
@@ -1770,9 +1770,9 @@
                     {
                       "type": "text",
                       "id": "lviBl",
-                      "name": "Título",
+                      "name": "Title",
                       "fill": "$fg",
-                      "content": "Worktrees · backend_v2",
+                      "content": "Worktrees · acme-api",
                       "fontFamily": "Inter",
                       "fontSize": 12,
                       "fontWeight": "700"
@@ -1780,14 +1780,14 @@
                     {
                       "type": "frame",
                       "id": "ho2bq",
-                      "name": "Ações",
+                      "name": "Actions",
                       "gap": 8,
                       "alignItems": "center",
                       "children": [
                         {
                           "type": "text",
                           "id": "JLRWn",
-                          "name": "Total",
+                          "name": "Count",
                           "fill": "$muted",
                           "content": "7",
                           "fontFamily": "Inter",
@@ -1797,7 +1797,7 @@
                         {
                           "type": "frame",
                           "id": "UqTYk",
-                          "name": "Botão ↻",
+                          "name": "Refresh button",
                           "cornerRadius": 4,
                           "stroke": "$border",
                           "strokeWidth": 1,
@@ -1809,7 +1809,7 @@
                             {
                               "type": "text",
                               "id": "wF3Bl",
-                              "name": "Rótulo",
+                              "name": "Label",
                               "fill": "$fg",
                               "content": "↻",
                               "fontFamily": "Inter",
@@ -1825,7 +1825,7 @@
                 {
                   "type": "frame",
                   "id": "RlrB1",
-                  "name": "Lista",
+                  "name": "List",
                   "width": "fill_container",
                   "layout": "vertical",
                   "padding": 8,
@@ -1833,7 +1833,7 @@
                     {
                       "type": "frame",
                       "id": "FUgTQ",
-                      "name": "Worktree master",
+                      "name": "Worktree main",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -1848,7 +1848,7 @@
                         {
                           "type": "frame",
                           "id": "VL1oZ",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center",
@@ -1856,7 +1856,7 @@
                             {
                               "type": "text",
                               "id": "iQ4Vq",
-                              "name": "Glifo",
+                              "name": "Glyph",
                               "fill": "$fg",
                               "content": "›",
                               "fontFamily": "Inter",
@@ -1868,7 +1868,7 @@
                         {
                           "type": "frame",
                           "id": "VVnaZ",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -1876,7 +1876,7 @@
                             {
                               "type": "frame",
                               "id": "yv6DL",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -1884,9 +1884,9 @@
                                 {
                                   "type": "text",
                                   "id": "A3s9eW",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "master",
+                                  "content": "main",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "700"
@@ -1896,16 +1896,16 @@
                             {
                               "type": "frame",
                               "id": "kY5do",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "vPFbI",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/Documents/backend_v2",
+                                  "content": "~/src/acme-api",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -1919,7 +1919,7 @@
                     {
                       "type": "frame",
                       "id": "VLrEf",
-                      "name": "Worktree DDC-630",
+                      "name": "Worktree APP-142",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -1934,7 +1934,7 @@
                         {
                           "type": "frame",
                           "id": "fQAzw",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center",
@@ -1942,7 +1942,7 @@
                             {
                               "type": "text",
                               "id": "tZS6M",
-                              "name": "Glifo",
+                              "name": "Glyph",
                               "fill": "$muted",
                               "content": "○",
                               "fontFamily": "Inter",
@@ -1954,7 +1954,7 @@
                         {
                           "type": "frame",
                           "id": "I4n9Y0",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -1962,7 +1962,7 @@
                             {
                               "type": "frame",
                               "id": "LfTxc",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -1970,9 +1970,9 @@
                                 {
                                   "type": "text",
                                   "id": "LW6mG",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-630",
+                                  "content": "APP-142",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -1980,7 +1980,7 @@
                                 {
                                   "type": "text",
                                   "id": "q7CDZ",
-                                  "name": "Tipo",
+                                  "name": "Kind",
                                   "fill": "$muted",
                                   "content": "feat",
                                   "fontFamily": "Inter",
@@ -1992,11 +1992,11 @@
                             {
                               "type": "text",
                               "id": "w3aGr",
-                              "name": "Descrição",
+                              "name": "Summary",
                               "fill": "$muted",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "sincronizar notas fiscais",
+                              "content": "oauth login",
                               "lineHeight": 1.35,
                               "fontFamily": "Inter",
                               "fontSize": 11,
@@ -2005,16 +2005,16 @@
                             {
                               "type": "frame",
                               "id": "Z42PR",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "upOIc",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/wt/backend_v2/DDC-630",
+                                  "content": "~/wt/acme-api/APP-142",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -2026,7 +2026,7 @@
                         {
                           "type": "frame",
                           "id": "riAZv",
-                          "name": "Botão Ir",
+                          "name": "Go badge",
                           "cornerRadius": 4,
                           "stroke": "$border",
                           "strokeWidth": 1,
@@ -2038,9 +2038,9 @@
                             {
                               "type": "text",
                               "id": "D2ztKS",
-                              "name": "Rótulo",
+                              "name": "Label",
                               "fill": "$fg",
-                              "content": "Ir",
+                              "content": "Go",
                               "fontFamily": "Inter",
                               "fontSize": 11,
                               "fontWeight": "normal"
@@ -2052,7 +2052,7 @@
                     {
                       "type": "frame",
                       "id": "ryNlc",
-                      "name": "Worktree DDC-658",
+                      "name": "Worktree APP-163",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -2067,7 +2067,7 @@
                         {
                           "type": "frame",
                           "id": "K5aUPc",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center",
@@ -2075,7 +2075,7 @@
                             {
                               "type": "text",
                               "id": "ZNT5y",
-                              "name": "Glifo",
+                              "name": "Glyph",
                               "fill": "$accent",
                               "content": "◐",
                               "fontFamily": "Inter",
@@ -2087,7 +2087,7 @@
                         {
                           "type": "frame",
                           "id": "SUxhD",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -2095,7 +2095,7 @@
                             {
                               "type": "frame",
                               "id": "kS6po",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -2103,9 +2103,9 @@
                                 {
                                   "type": "text",
                                   "id": "xajsW",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-658",
+                                  "content": "APP-163",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -2113,7 +2113,7 @@
                                 {
                                   "type": "text",
                                   "id": "T3mHXv",
-                                  "name": "Tipo",
+                                  "name": "Kind",
                                   "fill": "$muted",
                                   "content": "fix",
                                   "fontFamily": "Inter",
@@ -2125,11 +2125,11 @@
                             {
                               "type": "text",
                               "id": "EmEBY",
-                              "name": "Descrição",
+                              "name": "Summary",
                               "fill": "$muted",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "migrar arquivos s3",
+                              "content": "billing export",
                               "lineHeight": 1.35,
                               "fontFamily": "Inter",
                               "fontSize": 11,
@@ -2138,16 +2138,16 @@
                             {
                               "type": "frame",
                               "id": "Vs8Z3",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "u8JAVA",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/wt/backend_v2/DDC-658",
+                                  "content": "~/wt/acme-api/APP-163",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -2155,9 +2155,9 @@
                                 {
                                   "type": "text",
                                   "id": "a2OQn",
-                                  "name": "Parte 1",
+                                  "name": "Part 1",
                                   "fill": "$accent",
-                                  "content": "· trabalhando há 4 min",
+                                  "content": "· working for 4m",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -2169,7 +2169,7 @@
                         {
                           "type": "frame",
                           "id": "tqcQZ",
-                          "name": "Botão Ir",
+                          "name": "Go badge",
                           "cornerRadius": 4,
                           "stroke": "$border",
                           "strokeWidth": 1,
@@ -2181,9 +2181,9 @@
                             {
                               "type": "text",
                               "id": "gbvKJ",
-                              "name": "Rótulo",
+                              "name": "Label",
                               "fill": "$fg",
-                              "content": "Ir",
+                              "content": "Go",
                               "fontFamily": "Inter",
                               "fontSize": 11,
                               "fontWeight": "normal"
@@ -2195,7 +2195,7 @@
                     {
                       "type": "frame",
                       "id": "WmO8g",
-                      "name": "Worktree DDC-680",
+                      "name": "Worktree APP-171",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -2210,7 +2210,7 @@
                         {
                           "type": "frame",
                           "id": "gZBUY",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -2218,7 +2218,7 @@
                         {
                           "type": "frame",
                           "id": "wPrHG",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -2226,7 +2226,7 @@
                             {
                               "type": "frame",
                               "id": "uwn39",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -2234,9 +2234,9 @@
                                 {
                                   "type": "text",
                                   "id": "TJCCC",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-680",
+                                  "content": "APP-171",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -2244,9 +2244,9 @@
                                 {
                                   "type": "text",
                                   "id": "KAf9N",
-                                  "name": "Tipo",
+                                  "name": "Kind",
                                   "fill": "$muted",
-                                  "content": "chore",
+                                  "content": "perf",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -2256,11 +2256,11 @@
                             {
                               "type": "text",
                               "id": "hdY8U",
-                              "name": "Descrição",
+                              "name": "Summary",
                               "fill": "$muted",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "remover sdk sankhya",
+                              "content": "faster search index",
                               "lineHeight": 1.35,
                               "fontFamily": "Inter",
                               "fontSize": 11,
@@ -2269,16 +2269,16 @@
                             {
                               "type": "frame",
                               "id": "Vc7h9",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "XiQWP",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/wt/backend_v2/DDC-680",
+                                  "content": "~/wt/acme-api/APP-171",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -2292,7 +2292,7 @@
                     {
                       "type": "frame",
                       "id": "pP3FE",
-                      "name": "Worktree DDC-649",
+                      "name": "Worktree APP-157",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -2307,7 +2307,7 @@
                         {
                           "type": "frame",
                           "id": "Pxusn",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -2315,7 +2315,7 @@
                         {
                           "type": "frame",
                           "id": "XYuyz",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -2323,7 +2323,7 @@
                             {
                               "type": "frame",
                               "id": "IYO5L",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -2331,9 +2331,9 @@
                                 {
                                   "type": "text",
                                   "id": "AX3NT",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-649",
+                                  "content": "APP-157",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -2341,7 +2341,7 @@
                                 {
                                   "type": "text",
                                   "id": "S18XQm",
-                                  "name": "Tipo",
+                                  "name": "Kind",
                                   "fill": "$muted",
                                   "content": "fix",
                                   "fontFamily": "Inter",
@@ -2353,11 +2353,11 @@
                             {
                               "type": "text",
                               "id": "PDqL8",
-                              "name": "Descrição",
+                              "name": "Summary",
                               "fill": "$muted",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "bloquear mnemonicos nao cadastrados",
+                              "content": "retry failed webhooks",
                               "lineHeight": 1.35,
                               "fontFamily": "Inter",
                               "fontSize": 11,
@@ -2366,16 +2366,16 @@
                             {
                               "type": "frame",
                               "id": "bPQcc",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "Gm6yr",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/.paseo/…/dull-parrot",
+                                  "content": "~/.paseo/…/quiet-otter",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -2387,7 +2387,7 @@
                         {
                           "type": "frame",
                           "id": "AlnAW",
-                          "name": "Botão Ir",
+                          "name": "Go badge",
                           "cornerRadius": 4,
                           "stroke": "$border",
                           "strokeWidth": 1,
@@ -2399,9 +2399,9 @@
                             {
                               "type": "text",
                               "id": "USxIm",
-                              "name": "Rótulo",
+                              "name": "Label",
                               "fill": "$fg",
-                              "content": "Ir",
+                              "content": "Go",
                               "fontFamily": "Inter",
                               "fontSize": 11,
                               "fontWeight": "normal"
@@ -2413,7 +2413,7 @@
                     {
                       "type": "frame",
                       "id": "XUabW",
-                      "name": "Worktree DDC-629",
+                      "name": "Worktree APP-188",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -2428,7 +2428,7 @@
                         {
                           "type": "frame",
                           "id": "A18gx",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -2436,7 +2436,7 @@
                         {
                           "type": "frame",
                           "id": "YoOQ3",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -2444,7 +2444,7 @@
                             {
                               "type": "frame",
                               "id": "Wnhxy",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -2452,9 +2452,9 @@
                                 {
                                   "type": "text",
                                   "id": "QMCJ1",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-629",
+                                  "content": "APP-188",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -2462,7 +2462,7 @@
                                 {
                                   "type": "text",
                                   "id": "IrsGx",
-                                  "name": "Tipo",
+                                  "name": "Kind",
                                   "fill": "$muted",
                                   "content": "feat",
                                   "fontFamily": "Inter",
@@ -2474,11 +2474,11 @@
                             {
                               "type": "text",
                               "id": "XbBrd",
-                              "name": "Descrição",
+                              "name": "Summary",
                               "fill": "$muted",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "padronizar competencia mmaaaa",
+                              "content": "dark mode toggle",
                               "lineHeight": 1.35,
                               "fontFamily": "Inter",
                               "fontSize": 11,
@@ -2487,16 +2487,16 @@
                             {
                               "type": "frame",
                               "id": "LQuS6",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "V324L",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/.paseo/…/unique-lynx",
+                                  "content": "~/.paseo/…/brave-heron",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -2510,7 +2510,7 @@
                     {
                       "type": "frame",
                       "id": "KR8BJ",
-                      "name": "Worktree fix/remover-infra-veezor-release",
+                      "name": "Worktree chore/upgrade-eslint",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -2525,7 +2525,7 @@
                         {
                           "type": "frame",
                           "id": "A9Qha",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -2533,7 +2533,7 @@
                         {
                           "type": "frame",
                           "id": "LlyLZ",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -2541,7 +2541,7 @@
                             {
                               "type": "frame",
                               "id": "mzpPs",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -2549,9 +2549,9 @@
                                 {
                                   "type": "text",
                                   "id": "X796H",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "fix/remover-infra-veezor-release",
+                                  "content": "chore/upgrade-eslint",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -2561,16 +2561,16 @@
                             {
                               "type": "frame",
                               "id": "J6Kjq6",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "TZg81",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$muted",
-                                  "content": "~/.paseo/…/fix-remover-infra…",
+                                  "content": "~/.paseo/…/upgrade-eslint",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -2590,7 +2590,7 @@
         {
           "type": "frame",
           "id": "pmRPW",
-          "name": "4 · Painel estreito",
+          "name": "4 · Narrow panel",
           "width": 200,
           "layout": "vertical",
           "gap": 8,
@@ -2598,9 +2598,9 @@
             {
               "type": "text",
               "id": "P0ZZj",
-              "name": "Título do estado",
+              "name": "State title",
               "fill": "$fg",
-              "content": "4 · Painel estreito",
+              "content": "4 · Narrow panel",
               "fontFamily": "Inter",
               "fontSize": 14,
               "fontWeight": "600"
@@ -2608,11 +2608,11 @@
             {
               "type": "text",
               "id": "WzFjx",
-              "name": "Nota",
+              "name": "Note",
               "fill": "$muted",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "Só a chave do card; pasta e descrição somem",
+              "content": "Only the ticket key; the folder and summary are hidden",
               "lineHeight": 1.35,
               "fontFamily": "Inter",
               "fontSize": 11,
@@ -2621,7 +2621,7 @@
             {
               "type": "frame",
               "id": "uFW0t",
-              "name": "Painel",
+              "name": "Panel",
               "clip": true,
               "width": "fill_container",
               "fill": "$panel",
@@ -2633,7 +2633,7 @@
                 {
                   "type": "frame",
                   "id": "PFEVA",
-                  "name": "Cabeçalho",
+                  "name": "Header",
                   "width": "fill_container",
                   "stroke": "$border",
                   "strokeWidth": {
@@ -2649,9 +2649,9 @@
                     {
                       "type": "text",
                       "id": "z17dYq",
-                      "name": "Título",
+                      "name": "Title",
                       "fill": "$fg",
-                      "content": "backend_v2",
+                      "content": "acme-api",
                       "fontFamily": "Inter",
                       "fontSize": 12,
                       "fontWeight": "700"
@@ -2659,14 +2659,14 @@
                     {
                       "type": "frame",
                       "id": "qsPTU",
-                      "name": "Ações",
+                      "name": "Actions",
                       "gap": 8,
                       "alignItems": "center",
                       "children": [
                         {
                           "type": "text",
                           "id": "d8Uwp",
-                          "name": "Total",
+                          "name": "Count",
                           "fill": "$muted",
                           "content": "7",
                           "fontFamily": "Inter",
@@ -2676,7 +2676,7 @@
                         {
                           "type": "frame",
                           "id": "KLDYl",
-                          "name": "Botão ↻",
+                          "name": "Refresh button",
                           "cornerRadius": 4,
                           "stroke": "$border",
                           "strokeWidth": 1,
@@ -2688,7 +2688,7 @@
                             {
                               "type": "text",
                               "id": "n5ca8g",
-                              "name": "Rótulo",
+                              "name": "Label",
                               "fill": "$fg",
                               "content": "↻",
                               "fontFamily": "Inter",
@@ -2704,7 +2704,7 @@
                 {
                   "type": "frame",
                   "id": "rdiqn",
-                  "name": "Lista",
+                  "name": "List",
                   "width": "fill_container",
                   "layout": "vertical",
                   "padding": 8,
@@ -2712,7 +2712,7 @@
                     {
                       "type": "frame",
                       "id": "pHzED",
-                      "name": "Card esperando você",
+                      "name": "Waiting card",
                       "width": "fill_container",
                       "cornerRadius": 6,
                       "stroke": "$border",
@@ -2724,7 +2724,7 @@
                         {
                           "type": "frame",
                           "id": "yEeDP",
-                          "name": "Topo",
+                          "name": "Top",
                           "width": "fill_container",
                           "gap": 6,
                           "alignItems": "center",
@@ -2732,7 +2732,7 @@
                             {
                               "type": "text",
                               "id": "zXVtj",
-                              "name": "Glifo",
+                              "name": "Glyph",
                               "fill": "$warn",
                               "content": "◆",
                               "fontFamily": "Inter",
@@ -2742,9 +2742,9 @@
                             {
                               "type": "text",
                               "id": "ibAPR",
-                              "name": "Título",
+                              "name": "Title",
                               "fill": "$warn",
-                              "content": "Esperando você",
+                              "content": "Waiting for you",
                               "fontFamily": "Inter",
                               "fontSize": 11,
                               "fontWeight": "600"
@@ -2752,9 +2752,9 @@
                             {
                               "type": "text",
                               "id": "Aumhm",
-                              "name": "Chave",
+                              "name": "Key",
                               "fill": "$muted",
-                              "content": "· DDC-630",
+                              "content": "· APP-157",
                               "fontFamily": "Inter",
                               "fontSize": 11,
                               "fontWeight": "normal"
@@ -2764,11 +2764,11 @@
                         {
                           "type": "text",
                           "id": "czPgz",
-                          "name": "Última mensagem",
+                          "name": "Last message",
                           "fill": "$muted",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
-                          "content": "Posso rodar a migration em homolog?",
+                          "content": "Should I add a dead-letter queue?",
                           "lineHeight": 1.35,
                           "fontFamily": "Inter",
                           "fontSize": 12,
@@ -2777,13 +2777,13 @@
                         {
                           "type": "frame",
                           "id": "VFWCU",
-                          "name": "Ação",
+                          "name": "Action",
                           "gap": 4,
                           "children": [
                             {
                               "type": "frame",
                               "id": "vRVJY",
-                              "name": "Botão Responder →",
+                              "name": "Reply button",
                               "cornerRadius": 4,
                               "stroke": "$border",
                               "strokeWidth": 1,
@@ -2795,9 +2795,9 @@
                                 {
                                   "type": "text",
                                   "id": "Ojlen",
-                                  "name": "Rótulo",
+                                  "name": "Label",
                                   "fill": "$warn",
-                                  "content": "Responder →",
+                                  "content": "Reply →",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -2811,14 +2811,14 @@
                     {
                       "type": "frame",
                       "id": "ebpMB",
-                      "name": "Espaço",
+                      "name": "Spacer",
                       "width": "fill_container",
                       "height": 8
                     },
                     {
                       "type": "frame",
                       "id": "J8x9T8",
-                      "name": "Worktree master",
+                      "name": "Worktree main",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -2833,7 +2833,7 @@
                         {
                           "type": "frame",
                           "id": "S3Kmi6",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center",
@@ -2841,7 +2841,7 @@
                             {
                               "type": "text",
                               "id": "u6z9y",
-                              "name": "Glifo",
+                              "name": "Glyph",
                               "fill": "$fg",
                               "content": "›",
                               "fontFamily": "Inter",
@@ -2853,7 +2853,7 @@
                         {
                           "type": "frame",
                           "id": "Rd12m",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -2861,7 +2861,7 @@
                             {
                               "type": "frame",
                               "id": "e7RSZ",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -2869,9 +2869,9 @@
                                 {
                                   "type": "text",
                                   "id": "ubwdg",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "master",
+                                  "content": "main",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "700"
@@ -2885,7 +2885,7 @@
                     {
                       "type": "frame",
                       "id": "S7XKHe",
-                      "name": "Worktree DDC-658",
+                      "name": "Worktree APP-163",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -2900,7 +2900,7 @@
                         {
                           "type": "frame",
                           "id": "wAZS6",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center",
@@ -2908,7 +2908,7 @@
                             {
                               "type": "text",
                               "id": "Q3cVXM",
-                              "name": "Glifo",
+                              "name": "Glyph",
                               "fill": "$accent",
                               "content": "◐",
                               "fontFamily": "Inter",
@@ -2920,7 +2920,7 @@
                         {
                           "type": "frame",
                           "id": "jAlfM",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -2928,7 +2928,7 @@
                             {
                               "type": "frame",
                               "id": "BZG73",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -2936,9 +2936,9 @@
                                 {
                                   "type": "text",
                                   "id": "lavyu",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-658",
+                                  "content": "APP-163",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -2948,16 +2948,16 @@
                             {
                               "type": "frame",
                               "id": "j7Mm1",
-                              "name": "Linha 3",
+                              "name": "Line 3",
                               "width": "fill_container",
                               "gap": 4,
                               "children": [
                                 {
                                   "type": "text",
                                   "id": "S9lUQL",
-                                  "name": "Parte 0",
+                                  "name": "Part 0",
                                   "fill": "$accent",
-                                  "content": "trabalhando há 4 min",
+                                  "content": "working for 4m",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
                                   "fontWeight": "normal"
@@ -2969,7 +2969,7 @@
                         {
                           "type": "frame",
                           "id": "TYaEF",
-                          "name": "Botão Ir",
+                          "name": "Go badge",
                           "cornerRadius": 4,
                           "stroke": "$border",
                           "strokeWidth": 1,
@@ -2981,9 +2981,9 @@
                             {
                               "type": "text",
                               "id": "q8iKOn",
-                              "name": "Rótulo",
+                              "name": "Label",
                               "fill": "$fg",
-                              "content": "Ir",
+                              "content": "Go",
                               "fontFamily": "Inter",
                               "fontSize": 11,
                               "fontWeight": "normal"
@@ -2995,7 +2995,7 @@
                     {
                       "type": "frame",
                       "id": "V0A6a6",
-                      "name": "Worktree DDC-680",
+                      "name": "Worktree APP-171",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -3010,7 +3010,7 @@
                         {
                           "type": "frame",
                           "id": "zrIIh",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -3018,7 +3018,7 @@
                         {
                           "type": "frame",
                           "id": "BQOce",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -3026,7 +3026,7 @@
                             {
                               "type": "frame",
                               "id": "KCghg",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -3034,9 +3034,9 @@
                                 {
                                   "type": "text",
                                   "id": "YGzVJ",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-680",
+                                  "content": "APP-171",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -3050,7 +3050,7 @@
                     {
                       "type": "frame",
                       "id": "MOqsW",
-                      "name": "Worktree DDC-649",
+                      "name": "Worktree APP-157",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -3065,7 +3065,7 @@
                         {
                           "type": "frame",
                           "id": "ujwBs",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -3073,7 +3073,7 @@
                         {
                           "type": "frame",
                           "id": "WIAkW",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -3081,7 +3081,7 @@
                             {
                               "type": "frame",
                               "id": "k0aSh",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -3089,9 +3089,9 @@
                                 {
                                   "type": "text",
                                   "id": "yHkIa",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-649",
+                                  "content": "APP-157",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -3103,7 +3103,7 @@
                         {
                           "type": "frame",
                           "id": "LTONl",
-                          "name": "Botão Ir",
+                          "name": "Go badge",
                           "cornerRadius": 4,
                           "stroke": "$border",
                           "strokeWidth": 1,
@@ -3115,9 +3115,9 @@
                             {
                               "type": "text",
                               "id": "Z5d1Lj",
-                              "name": "Rótulo",
+                              "name": "Label",
                               "fill": "$fg",
-                              "content": "Ir",
+                              "content": "Go",
                               "fontFamily": "Inter",
                               "fontSize": 11,
                               "fontWeight": "normal"
@@ -3129,7 +3129,7 @@
                     {
                       "type": "frame",
                       "id": "d77SGr",
-                      "name": "Worktree DDC-629",
+                      "name": "Worktree APP-188",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -3144,7 +3144,7 @@
                         {
                           "type": "frame",
                           "id": "yBUJY",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -3152,7 +3152,7 @@
                         {
                           "type": "frame",
                           "id": "Ts6Ak",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -3160,7 +3160,7 @@
                             {
                               "type": "frame",
                               "id": "MRbwA",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -3168,9 +3168,9 @@
                                 {
                                   "type": "text",
                                   "id": "mq2UB",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "DDC-629",
+                                  "content": "APP-188",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"
@@ -3184,7 +3184,7 @@
                     {
                       "type": "frame",
                       "id": "dAgBz",
-                      "name": "Worktree fix/remover-infra-veezor-release",
+                      "name": "Worktree chore/upgrade-eslint",
                       "width": "fill_container",
                       "stroke": "$border",
                       "strokeWidth": {
@@ -3199,7 +3199,7 @@
                         {
                           "type": "frame",
                           "id": "k9Eo8x",
-                          "name": "Estado",
+                          "name": "State",
                           "width": 14,
                           "height": 18,
                           "alignItems": "center"
@@ -3207,7 +3207,7 @@
                         {
                           "type": "frame",
                           "id": "qzw0f",
-                          "name": "Texto",
+                          "name": "Text",
                           "width": "fill_container",
                           "layout": "vertical",
                           "gap": 2,
@@ -3215,7 +3215,7 @@
                             {
                               "type": "frame",
                               "id": "xJeil",
-                              "name": "Linha 1",
+                              "name": "Line 1",
                               "width": "fill_container",
                               "gap": 6,
                               "alignItems": "center",
@@ -3223,9 +3223,9 @@
                                 {
                                   "type": "text",
                                   "id": "FiUTI",
-                                  "name": "Título",
+                                  "name": "Title",
                                   "fill": "$fg",
-                                  "content": "remover-infra…",
+                                  "content": "upgrade-esl…",
                                   "fontFamily": "Inter",
                                   "fontSize": 12,
                                   "fontWeight": "600"

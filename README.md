@@ -2,25 +2,27 @@
 
 A [Tern](https://stencil.so/tern) plugin: a panel pinned to the edge of every tab with the git worktrees of the focused repository and the state of the omp agents running in each one.
 
-![The panel beside a terminal, with the current worktree highlighted and an Ir badge on a worktree that has a tab open](docs/panel.png)
+![Tern with the panel on the left: an agent waiting for an answer at the top, the main checkout highlighted, two agents working and one idle](docs/hero.png)
 
 ## Use
 
-Toggle the panel with `Alt+Shift+E`, or the palette command **Worktrees: mostrar ou ocultar o painel**. `Alt+Shift+W` is left alone: tern-worktrees users often bind it to its new worktree picker.
+Toggle the panel with `Alt+Shift+E`, or the palette command **Worktrees: show or hide the panel**. `Alt+Shift+W` is left alone: tern-worktrees users often bind it to its new worktree picker.
 
 When the panel is on, every tab of the window has its own copy, at the same edge and width, so switching tabs moves nothing. A new tab gets one as soon as it opens; a tab whose other panes all close loses its copy instead of keeping a lone panel. Clicking a panel hands the focus back to that tab's last used pane. Whether the panel is on is kept in the plugin's `kv.json`, like its side.
 
-The panel sits on the left of the tab by default. **Worktrees: alternar lado do painel** moves every copy to the other side; the choice applies to every window and restart.
+The panel sits on the left of the tab by default. **Worktrees: move the panel to the other side** moves every copy to the other side; the choice applies to every window and restart.
+
+<img src="docs/panel.png" alt="The panel up close" width="320">
 
 | Row | Meaning |
 | --- | --- |
 | Accent bar and title | The worktree of the focused pane |
-| `Ir` | A pane is open in this worktree; without it, a click opens a tab there |
+| `Go` | A pane is open in this worktree; without it, a click opens a tab there |
 | Spinner and timer | An agent in it is working, for that long |
 | `○` | An agent in it is idle |
 | `·` | No agent in it |
 
-A branch with a ticket key (`feat/DDC-630-sincronizar-notas-fiscais`) shows the key, the type and the rest of the name as a summary; other branch names show as they are.
+A branch with a ticket key (`feat/APP-142-oauth-login`) shows the key, the type and the rest of the name as a summary; other branch names (`chore/upgrade-eslint`) show as they are.
 
 A worktree whose agent waits for an answer moves to a card at the top, with the agent's last message and how long it has waited.
 
@@ -28,7 +30,7 @@ A worktree whose agent waits for an answer moves to a card at the top, with the 
 | --- | --- |
 | A worktree card | Focuses the pane last used in that worktree, or its first pane, or opens a tab in it |
 | Ctrl+click on a worktree card | Opens Tern's Git view of the worktree in a tab |
-| A waiting card or `Responder` | Focuses that agent |
+| A waiting card or `Reply` | Focuses that agent |
 | `↻` | Reads the worktree list again |
 
 The list is read again when the panel opens, when the focused pane moves to another repository, when a command finishes in a worktree, and on `↻`. Agent states are read every 3 seconds and when an agent finishes a turn.
@@ -64,7 +66,7 @@ tern plugin types .
 | `window.luau` | The canvas panel, its placement and the Tern events |
 | `test/model.test.luau` | Tests of `model.luau`, run with Lune |
 | `designs/worktree-panel.pen` | The pen.dev prototype of the panel states |
-| `docs/panel.png` | The screenshot above |
+| `docs/hero.png`, `docs/panel.png` | The screenshots above |
 
 ## License
 

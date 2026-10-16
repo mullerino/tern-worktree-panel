@@ -194,7 +194,7 @@ local function waitingCard(item: Model.Waiting, now: number): any
 	local top = {
 		fixed(role("dot", keyed("dot", ui.text({ span("◆", "warning") })))),
 		grow(
-			cut("waitTitle", { span("Esperando você", "warning strong"), span(" · " .. item.branch.title, "muted") })
+			cut("waitTitle", { span("Waiting for you", "warning strong"), span(" · " .. item.branch.title, "muted") })
 		),
 	}
 	local timer = elapsed("since", if item.since > 0 then item.since else nil, now)
@@ -208,10 +208,7 @@ local function waitingCard(item: Model.Waiting, now: number): any
 	end
 	table.insert(
 		children,
-		role(
-			"reply",
-			ui.el("button", { key = "go", text = "Responder →", actions = { click = "agent=" .. item.pane } })
-		)
+		role("reply", ui.el("button", { key = "go", text = "Reply →", actions = { click = "agent=" .. item.pane } }))
 	)
 	return role(
 		"waiting",
@@ -224,7 +221,7 @@ local function marker(item: Model.Row): any
 		return fixed(
 			role(
 				"marker",
-				ui.node("spinner", { key = "agent", style = "orbit", tone = "accent", aria = "Agente trabalhando" })
+				ui.node("spinner", { key = "agent", style = "orbit", tone = "accent", aria = "Agent working" })
 			)
 		)
 	end
@@ -239,7 +236,7 @@ local function row(item: Model.Row, now: number): any
 	end
 	local head = { marker(item), grow(cut("name", title)) }
 	if not item.current and item.open then
-		table.insert(head, fixed(role("go", keyed("action", ui.text({ span("Ir", nil) })))))
+		table.insert(head, fixed(role("go", keyed("action", ui.text({ span("Go", nil) })))))
 	end
 	local body = { line("head", { align = "center" }, head) }
 	if item.branch.summary then
@@ -284,7 +281,7 @@ local function view(board: Model.Board?, now: number): any
 	elseif not state.loaded or not board then
 		table.insert(
 			children,
-			ui.node("spinner", { key = "loading", style = "dots", label = { span("Carregando worktrees", "muted") } })
+			ui.node("spinner", { key = "loading", style = "dots", label = { span("Loading worktrees", "muted") } })
 		)
 	else
 		local waiting = {}
@@ -395,7 +392,7 @@ local function refresh()
 	local dir = state.cwd
 	if not dir then
 		state.loaded, state.trees = true, {}
-		state.failure = "Foque um terminal dentro de um repositório git."
+		state.failure = "Focus a terminal inside a git repository."
 		redraw()
 		return
 	end
@@ -410,10 +407,10 @@ local function refresh()
 		state.loading = false
 		if res.status == 0 then
 			state.trees = Model.parseWorktrees(res.stdout)
-			state.failure = if #state.trees == 0 then "Nenhuma worktree encontrada." else nil
+			state.failure = if #state.trees == 0 then "No worktrees found." else nil
 		else
 			state.trees = {}
-			state.failure = "Fora de um repositório git: " .. Model.displayPath(dir, WINDOWS)
+			state.failure = "Not a git repository: " .. Model.displayPath(dir, WINDOWS)
 		end
 		state.loaded = true
 		if cx then
@@ -500,7 +497,7 @@ local function create(cx: any, tab: number, at: Model.Side): number?
 		focus = false,
 	})
 	if not pane then
-		cx:toast("error", "O painel de worktrees não abriu", tostring(err))
+		cx:toast("error", "The worktree panel did not open", tostring(err))
 		return nil
 	end
 	state.placed[tab] = pane
@@ -701,14 +698,14 @@ local function goTo(cx: any, tree: Model.Tree)
 		return
 	end
 	if not cx.layout:new_tab({ cwd = Model.native(tree.path, WINDOWS) }) then
-		cx:toast("error", "Não abriu a aba", Model.displayPath(tree.path, WINDOWS))
+		cx:toast("error", "The tab did not open", Model.displayPath(tree.path, WINDOWS))
 	end
 end
 
 local function openGit(cx: any, tree: Model.Tree)
 	cx.git:open(Model.native(tree.path, WINDOWS), { how = "tab" }):next(function(_, err, next)
 		if err and next then
-			next:toast("error", "A tela Git não abriu", tostring(err))
+			next:toast("error", "The Git view did not open", tostring(err))
 		end
 	end)
 end
@@ -718,7 +715,7 @@ local function focusAgent(cx: any, pane: number)
 		cx.layout:focus(pane)
 		return
 	end
-	cx:toast("info", "O agente está em outra sessão", "Troque de sessão para responder a ele.")
+	cx:toast("info", "The agent is in another session", "Switch to that session to reply.")
 end
 
 local function held(mods: { string }?, name: string): boolean
@@ -747,7 +744,7 @@ end
 
 tern.command({
 	id = "toggle",
-	title = "Worktrees: mostrar ou ocultar o painel",
+	title = "Worktrees: show or hide the panel",
 	icon = "branch",
 	keys = { "alt+shift+e" },
 	run = toggle,
@@ -755,7 +752,7 @@ tern.command({
 
 tern.command({
 	id = "side",
-	title = "Worktrees: alternar lado do painel",
+	title = "Worktrees: move the panel to the other side",
 	icon = "branch",
 	run = function(cx: any)
 		local next: Model.Side = if side() == "left" then "right" else "left"
@@ -770,7 +767,7 @@ tern.command({
 				settle(cx, panel.pane, panel.tab, next)
 			end
 		end
-		cx:toast("info", if next == "right" then "Painel à direita" else "Painel à esquerda")
+		cx:toast("info", if next == "right" then "Panel on the right" else "Panel on the left")
 	end,
 })
 
