@@ -236,11 +236,10 @@ local function elapsed(name: string, since: number?, now: number): any?
 end
 
 local function waitingCard(item: Model.Waiting, now: number): any
+	local where = if item.elsewhere then " · in " .. item.elsewhere else " · " .. item.branch.title
 	local top = {
 		fixed(role("dot", keyed("dot", ui.text({ span("◆", "warning") })))),
-		grow(
-			cut("waitTitle", { span("Waiting for you", "warning strong"), span(" · " .. item.branch.title, "muted") })
-		),
+		grow(cut("waitTitle", { span("Waiting for you", "warning strong"), span(where, "muted") })),
 	}
 	local timer = elapsed("since", if item.since > 0 then item.since else nil, now)
 	if timer then
@@ -315,7 +314,10 @@ end
 local function signature(board: Model.Board): string
 	local parts = { tostring(#state.trees), state.failure or "", repoName(), tostring(state.creatable) }
 	for _, w in board.waiting do
-		table.insert(parts, string.format("w%d:%d:%s:%s", w.index, w.pane, tostring(w.since), w.message))
+		table.insert(
+			parts,
+			string.format("w%d:%d:%s:%s:%s", w.index, w.pane, tostring(w.since), w.message, w.elsewhere or "")
+		)
 	end
 	for _, r in board.rows do
 		table.insert(

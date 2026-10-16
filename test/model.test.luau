@@ -141,7 +141,9 @@ test("board marks the current worktree, open tabs and the strongest agent state"
 		seen = { [21] = { state = "working", since = 42 } },
 	}))
 	eq(#b.rows, 3, "rows")
-	eq(#b.waiting, 0, "agent in another repo is ignored")
+	eq(#b.waiting, 1, "agent waiting in another repo gets a card")
+	eq(b.waiting[1].elsewhere, "other", "card names that repo")
+	eq(b.waiting[1].index, 0, "card points at no row")
 	eq(b.rows[2].current, true, "login current")
 	eq(b.rows[2].agent, nil, "no agent in login")
 	eq(b.rows[3].open, true, "hooks open")

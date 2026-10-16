@@ -50,6 +50,7 @@ export type Waiting = {
 	branch: Branch,
 	since: number,
 	message: string,
+	elsewhere: string?,
 }
 
 export type Board = {
@@ -239,6 +240,12 @@ function Model.find(path: string?, index: Index, windows: boolean): Tree?
 	return nil
 end
 
+function Model.folder(path: string, windows: boolean): string
+	local norm = if windows then string.gsub(path, "\\", "/") else path
+	norm = string.gsub(norm, "/+$", "")
+	return string.match(norm, "([^/]+)$") or norm
+end
+
 function Model.owner(path: string?, trees: { Tree }, windows: boolean): Tree?
 	return Model.find(path, Model.index(trees, windows), windows)
 end
@@ -321,6 +328,7 @@ function Model.board(input: BoardInput): Board
 	end
 	local strongest: { [Tree]: Agent } = {}
 	local waitingByTree: { [Tree]: { Agent } } = {}
+	local outside: { Agent } = {}
 	for _, agent in input.agents do
 		local tree = Model.find(agent.cwd, index, windows)
 		if tree then
@@ -332,6 +340,8 @@ function Model.board(input: BoardInput): Board
 				waitingByTree[tree] = waitingByTree[tree] or {}
 				table.insert(waitingByTree[tree], agent)
 			end
+		elseif agent.state == WAITING then
+			table.insert(outside, agent)
 		end
 	end
 	local board: Board = { rows = {}, waiting = {} }
@@ -366,6 +376,18 @@ function Model.board(input: BoardInput): Board
 				changed = if status then status.changed else 0,
 			})
 		end
+	end
+	for _, agent in outside do
+		local seen = input.seen[agent.pane]
+		local folder = Model.folder(agent.cwd, windows)
+		table.insert(board.waiting, {
+			index = 0,
+			pane = agent.pane,
+			branch = { title = folder },
+			since = if seen then seen.since else 0,
+			message = agent.last_message or "",
+			elsewhere = folder,
+		})
 	end
 	table.sort(board.waiting, function(a, b)
 		return a.since < b.since
