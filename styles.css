@@ -51,6 +51,7 @@
   border-radius: 7px;
   background: transparent;
   cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease;
 }
 [data-role='wtp.waiting']:hover {
   border-color: rgb(from var(--warn) r g b / 45%);
@@ -93,6 +94,7 @@
   border-left: 2px solid transparent;
   border-radius: 0;
   cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease;
 }
 [data-role='wtp.row']:hover {
   background: var(--l1);
